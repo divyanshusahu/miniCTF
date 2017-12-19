@@ -50,6 +50,7 @@
 		</div>
 		<div class="registerForm">
 			<form action="" method="post">
+				{% csrf_token %}
 				<div class="form-group">
 					<input type="text" name="teamname" placeholder="Team Name" required class="form-control">
 				</div>
