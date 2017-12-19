@@ -1,40 +1,82 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends 'navigationbar.html' %}
 
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width" , initial-scale=1, viewport-fit="cover">
-    <meta name="description" content="Register your team here">
+{% load staticfiles %}
+
+{% block title %}
 	<title>Challenges</title>
+{% endblock %}
 
-	{% load static %}
-	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/navigationbar.css' %}">
+{% block customcss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/challenges.css' %}">
+{% endblock %}
 
-</head>
-<body>
+{% block custombody %}
 
-<!-- Navigation bar -->
-	<div id="navigationBar">
+	<!-- challenges display -->
+	<div id="challenges">
 		<div class="container">
-			<div class="navigationBarLeft">
-				<ul>
-					<li><a href="#">MiniCTF</a></li>
-					<li><a href="#">Teams</a></li>
-					<li><a href="#">Scoreboard</a></li>
-					<li><a href="#">Challenges</a></li>
-				</ul>
-			</div>
-			<div class="navigationBarRight">
-				<ul>
-					<li><a href="#">Logout</a></li>
-					<li><a href="#">Profile</a></li>
-					<li><a href="#">Team</a></li>
-				</ul>
+			<div class="challengesSet">
+				
+				<div id="category1">
+					<div class="heading">
+						<h2>Category 1</h2>
+					</div>
+					<div class="categorySet">
+						<table>
+							<tbody>
+								<tr>
+									<td>Challenge 1</td>
+									<td>Challenge 2</td>
+									<td>Challenge 3</td>
+									<td>Challenge 4</td>
+									<td>Challenge 5</td>
+								</tr>
+								<tr>
+									<td>Challenge 6</td>
+									<td>Challenge 7</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="category2">
+					<div class="heading">
+						<h2>Category 2</h2>
+					</div>
+					<div class="categorySet">
+						<table>
+							<tbody>
+								<tr>
+									<td>Challenge 1</td>
+									<td>Challenge 2</td>
+									<td>Challenge 3</td>
+									<td>Challenge 4</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="category3">
+					<div class="heading">
+						<h2>Category 3</h2>
+					</div>
+					<div class="categorySet">
+						<table>
+							<tbody>
+								<tr>
+									<td>Challenge 1</td>
+									<td>Challenge 2</td>
+									<td>Challenge 3</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
 
-</body>
-</html>
+{% endblock %}
