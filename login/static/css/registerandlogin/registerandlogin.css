@@ -40,6 +40,11 @@ table {
 	width: 100%;
 }
 
+span {
+	display: inline-block;
+	width: 100%;
+}
+
 .submitButton {
 	width: 100%;
 	height: 40px;
