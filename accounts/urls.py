@@ -1,8 +1,11 @@
 from django.urls import path, include
-from . import views
+from . import views as manual_views
+from django.contrib.auth import views
+from . import forms
 
 urlpatterns = [
-	path('', views.redirect, name="redirect"),
-	path('login/', views.login, name="login"),
-	path('register/', views.register, name="register")
+	path('', manual_views.redirect, name="redirect"),
+	path('login/', views.login, {'template_name':'login/login.html','authentication_form':forms.LoginForm}),
+	path('register/', manual_views.register, name="register"),
+	#path('logout/', views.logout,{'next_page':'/'})
 ]
