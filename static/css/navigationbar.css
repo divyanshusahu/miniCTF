@@ -12,6 +12,11 @@ a:hover {
 	color: inherit;
 }
 
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
 #navigationBar {
 	width: 100%;
 	height: 80px;

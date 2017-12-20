@@ -24,7 +24,7 @@
 			</table>
 		</div>
 		<div class="registerForm">
-			<form method="post">
+			<!--<form method="post">
 				{% csrf_token %}
 				<div class="form-group">
 					<input type="text" name="teamname" placeholder="Team Name" required class="form-control">
@@ -35,6 +35,30 @@
 				<div class="form-group">
 					<input type="password" name="password" placeholder="Password" required class="form-control">
 				</div>
+				<input type="submit" name="submit" value="Register" class="submitButton">
+			</form>-->
+			<!--<form method="post">
+				{% csrf_token %}
+				<div class="form-group">
+					{{ form.teamnane.help_text }}
+					{{ form.teamname}}
+				</div>
+				<div class="form-group">
+					{{ form.email}}
+				</div>
+				<div class="form-group">
+					{{ form.password}}
+				</div>
+				<input type="submit" name="submit" value="Register" class="submitButton">
+			</form>-->
+			<form method="post">
+				{% csrf_token %}
+				{% for field in form %}
+					<div class="form-group">
+						{{ field }}
+						{{ field.errors }}
+					</div>
+				{% endfor %}
 				<input type="submit" name="submit" value="Register" class="submitButton">
 			</form>
 		</div>
