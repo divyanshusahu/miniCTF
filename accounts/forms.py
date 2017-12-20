@@ -9,7 +9,7 @@ class RegisterForm(forms.ModelForm) :
 
 	class Meta :
 		model = models.Teams
-		fields = ["teamname","email","password"]
+		fields = ["teamname","email"]
 
 class LoginForm(AuthenticationForm) :
 	username = forms.CharField(max_length=50, label="", widget=forms.TextInput(attrs={'placeholder':'Team Name','class':'form-control'}))

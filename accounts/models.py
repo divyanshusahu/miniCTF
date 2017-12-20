@@ -5,6 +5,5 @@ from django.db import models
 class Teams(models.Model) :
 	teamname = models.CharField(max_length=250, primary_key=True)
 	email = models.EmailField(max_length=250, unique=True)
-	password = models.CharField(max_length=250)
 	job = models.CharField(max_length=100, null=True)
 	company = models.CharField(max_length=250, null=True)

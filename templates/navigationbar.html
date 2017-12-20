@@ -32,7 +32,11 @@
 			</div>
 			<div class="navigationBarRight">
 				<ul>
-					<li><a href="http://127.0.0.1:8000/accounts/login/">Login</a></li>
+					{% if request.user.is_authenticated %}
+						<li><a href="/accounts/logout">Logout</a></li>
+					{% else %}
+						<li><a href="/accounts/login">Login</a></li>
+					{% endif %}
 					<li><a href="#">Profile</a></li>
 					<li><a href="#">Team</a></li>
 				</ul>
