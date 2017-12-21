@@ -31,6 +31,7 @@ a:visited {
 .navigationBarLeft , .navigationBarRight {
 	width: 40%;
 	line-height: 80px;
+	background-color: #444;
 }
 
 .navigationBarLeft {
@@ -63,4 +64,34 @@ a:visited {
 
 .navigationBarRight ul li {
 	float: right;
+}
+
+.navigationBarRight ul li:first-child {
+	display: none;
+}
+
+@media screen and (max-width: 1200px) {
+
+	.navigationBarLeft ul li:not(:first-child), .navigationBarRight ul li:not(:first-child) {
+		display: none;
+		width: 100%;
+	}
+
+	.navigationBarRight ul li:first-child {
+		display: inline-block;
+		cursor: pointer;
+		float: right;
+	}
+
+	.navigationBarLeft, .navigationBarRight {
+		width: 50%;
+	}
+
+	.container {
+		padding: 0;
+	}
+
+	li {
+		padding-left: 10px;
+	}
 }

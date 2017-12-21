@@ -25,20 +25,21 @@
 			<div class="navigationBarLeft">
 				<ul>
 					<li><a href="/">MiniCTF</a></li>
-					<li><a href="/teams">Teams</a></li>
-					<li><a href="/scoreboard/">Scoreboard</a></li>
-					<li><a href="/challenges/">Challenges</a></li>
+					<li class="des"><a href="/teams">Teams</a></li>
+					<li class="des"><a href="/scoreboard/">Scoreboard</a></li>
+					<li class="des"><a href="/challenges/">Challenges</a></li>
 				</ul>
 			</div>
 			<div class="navigationBarRight">
 				<ul>
+					<li id="navbarToggle">MENU</li>
 					{% if request.user.is_authenticated %}
-						<li><a href="/accounts/logout">Logout</a></li>
+						<li class="des"><a href="/accounts/logout">Logout</a></li>
 					{% else %}
-						<li><a href="/accounts/login">Login</a></li>
+						<li class="des"><a href="/accounts/login">Login</a></li>
 					{% endif %}
-					<li><a href="/accounts/profile">Profile</a></li>
-					<li><a href="#">Team</a></li>
+					<li class="des"><a href="/accounts/profile">Profile</a></li>
+					<li class="des"><a href="#">Team</a></li>
 				</ul>
 			</div>
 		</div>
@@ -46,6 +47,8 @@
 
 	{% block custombody %}
 	{% endblock %}
+
+	<script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
 
 </body>
 </html>
