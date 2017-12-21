@@ -1,0 +1,33 @@
+{% extends 'navigationbar.html' %}
+
+{% block title %}
+	<title>Teams</title>
+{% endblock %}
+
+{% block custombody %}
+
+	<div class="container">
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Team name</th>
+						<th>Job</th>
+						<th>Company</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for team in obj %}
+						<tr>
+							<td> {{ team.teamname }} </td>
+							<td> {{ team.job }} </td>
+							<td> {{ team.company }} </td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	
+	</div>
+
+{% endblock %}

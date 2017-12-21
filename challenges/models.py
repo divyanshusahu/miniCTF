@@ -9,4 +9,4 @@ class Challenges(models.Model) :
 	files = models.FileField(null=True)
 	flag = models.CharField(max_length=500)
 	author = models.CharField(max_length=250)
-	solved_by = models.IntegerField(null=True)
+	#solved_by = models.IntegerField(null=True)

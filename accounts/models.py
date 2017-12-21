@@ -7,3 +7,4 @@ class Teams(models.Model) :
 	email = models.EmailField(max_length=250, unique=True)
 	job = models.CharField(max_length=100, null=True)
 	company = models.CharField(max_length=250, null=True)
+	points = models.IntegerField(default=0)
