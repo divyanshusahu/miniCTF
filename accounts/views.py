@@ -4,6 +4,7 @@ from . import forms
 from . import models
 from django.contrib.auth import authenticate, login 
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -11,7 +12,10 @@ def redirect(request) :
 	return HttpResponseRedirect("login/")
 
 def register(request) :
-	
+
+	if request.user.is_authenticated :
+		return HttpResponseRedirect("/accounts/profile")
+
 	if request.method == 'POST' :
 		form = forms.RegisterForm(request.POST)
 		if form.is_valid() :
@@ -32,3 +36,14 @@ def register(request) :
 		form = forms.RegisterForm()
 	
 	return render(request, 'register/register.html', {'form':form})
+
+@login_required(login_url="/accounts/login/")
+def profile(request) :
+
+	if request.method == 'POST' :
+		form = forms.UpdateTeamDetails(request.POST)
+		#if form.is_valid() :
+	else :
+		form = forms.UpdateTeamDetails()
+		
+	return render(request, 'profile/profile.html', {'form':form})

@@ -26,20 +26,13 @@
 		<div class="registerForm">
 			<form method="post">
 				{% csrf_token %}
-				<!--<div class="form-group">
-					<input type="text" name="teamname" placeholder="Team Name" required class="form-control">
-				</div>
-				<div class="form-group">
-					<input type="password" name="password" placeholder="Password" required class="form-control">
-				</div>-->
-				<!--<div class="form-group">{{ form.teamname }}</div>
-				<div class="form-group">{{ form.password }}</div>
-				<input type="submit" name="submit" value="Login" class="submitButton">-->
+	
 				{% for field in form %}
 					<div class="form-group">
 						{{ field }}
 					</div>
 				{% endfor %}
+	
 				<input type="submit" name="submit" value="Login" class="submitButton">
 			</form>
 		</div>

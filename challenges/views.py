@@ -6,6 +6,4 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url="/accounts/login")
 def index(request) :
-	if not request.user.is_authenticated :
-		return redirect('/accounts/login/')
 	return render(request, 'challenges.html')

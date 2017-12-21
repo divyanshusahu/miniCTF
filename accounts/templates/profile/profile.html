@@ -1,0 +1,24 @@
+{% extends 'navigationbar.html' %}
+
+{% block title %}
+	<title>Team Details</title>
+{% endblock %}
+
+{% block custombody %}
+	
+	<div class="container">
+		<h2>Team Details</h2>
+
+		<form method="post">
+			{% for fields in form %}
+				<div class="form-group">
+					{{ fields }}
+				</div>
+			{% endfor %}
+
+			<input type="submit" name="update" value="Update">
+		</form>
+
+	</div>
+
+{% endblock %}
