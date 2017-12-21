@@ -25,7 +25,7 @@
 			<div class="navigationBarLeft">
 				<ul>
 					<li><a href="/">MiniCTF</a></li>
-					<li class="des"><a href="/teams">Teams</a></li>
+					<li class="des"><a href="/teams/">Teams</a></li>
 					<li class="des"><a href="/scoreboard/">Scoreboard</a></li>
 					<li class="des"><a href="/challenges/">Challenges</a></li>
 				</ul>
@@ -34,11 +34,11 @@
 				<ul>
 					<li id="navbarToggle">MENU</li>
 					{% if request.user.is_authenticated %}
-						<li class="des"><a href="/accounts/logout">Logout</a></li>
+						<li class="des"><a href="/accounts/logout/">Logout</a></li>
 					{% else %}
-						<li class="des"><a href="/accounts/login">Login</a></li>
+						<li class="des"><a href="/accounts/login/">Login</a></li>
 					{% endif %}
-					<li class="des"><a href="/accounts/profile">Profile</a></li>
+					<li class="des"><a href="/accounts/profile/">Profile</a></li>
 					<li class="des"><a href="#">Team</a></li>
 				</ul>
 			</div>

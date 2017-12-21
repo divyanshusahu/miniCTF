@@ -1,0 +1,30 @@
+{% extends 'navigationbar.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+	<title>Add Challenges</title>
+{% endblock %}
+
+{% block customcss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/addchallenge.css' %}">
+{% endblock %}
+
+{% block custombody %}
+	<div class="container">
+		<div id="addChallenge">
+			<h3>Add challenges</h3>
+			<form method="post">
+				{% csrf_token %}
+				{% for c in form %}
+					<div class="form-group">
+						<label>{{ c.label }}</label>
+						{{ c }}
+					</div>
+				{% endfor %}
+				<input type="submit" name="add", value="Add" class="btn btn-primary">
+			</form>
+		</div>
+		<p><b>NOTE: Use admin panel to remove challenge</b></p>
+	</div>
+{% endblock %}

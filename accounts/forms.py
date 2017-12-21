@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from . import models
-from django.http import HttpResponseRedirect
 
 class RegisterForm(forms.ModelForm) :
 	teamname = forms.CharField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Team Name','class':'form-control'}))
