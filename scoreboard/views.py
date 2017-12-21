@@ -4,5 +4,5 @@ from accounts.models import Teams
 # Create your views here.
 
 def score(request) :
-	obj = Teams.objects.all()
-	return render(request, 'scoreboard.html', {'obj':obj})
+	teams_list = Teams.objects.order_by("-points")
+	return render(request, 'scoreboard.html', {'teams_list':teams_list})

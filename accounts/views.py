@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from . import forms
 from . import models
 from django.contrib.auth import authenticate, login 
@@ -42,7 +42,11 @@ def profile(request) :
 
 	if request.method == 'POST' :
 		form = forms.UpdateTeamDetails(request.POST)
-		#if form.is_valid() :
+		if form.is_valid() :
+			job = form.cleaned_data.get("job")
+			company = form.cleaned_data.get("company")
+			models.Teams.objects.filter().update(job=job, company=company)
+			return HttpResponse("Details Updated")
 	else :
 		form = forms.UpdateTeamDetails()
 		

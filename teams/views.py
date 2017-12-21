@@ -4,5 +4,5 @@ from accounts.models import Teams
 # Create your views here.
 
 def teams(request) :
-	obj = Teams.objects.all()
-	return render(request, 'teams.html', {'obj':obj})
+	teams_list = Teams.objects.all()
+	return render(request, 'teams.html', {'teams_list':teams_list})
