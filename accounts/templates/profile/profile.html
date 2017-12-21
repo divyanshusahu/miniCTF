@@ -8,7 +8,8 @@
 	
 	<div class="container">
 		<h2>Team Details</h2>
-
+		<p><b>Team Name</b> : {{ user.username }}</p>
+		<p><b>Team Email</b> : {{ user.email }}</p>
 		<form method="post">
 			{% for fields in form %}
 				<div class="form-group">
