@@ -45,8 +45,9 @@ def profile(request) :
 		if form.is_valid() :
 			job = form.cleaned_data.get("job")
 			company = form.cleaned_data.get("company")
-			models.Teams.objects.filter().update(job=job, company=company)
-			return HttpResponse("Details Updated")
+			team = request.user
+			models.Teams.objects.filter(teamname=team).update(job=job, company=company)
+			return HttpResponse("Details Updated.<br><a href='/accounts/profile'>Return Back</a>")
 	else :
 		form = forms.UpdateTeamDetails()
 		

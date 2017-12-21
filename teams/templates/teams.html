@@ -1,33 +1,41 @@
 {% extends 'navigationbar.html' %}
 
+{% load staticfiles %}
+
 {% block title %}
 	<title>Teams</title>
+{% endblock %}
+
+{% block customcss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 {% endblock %}
 
 {% block custombody %}
 
 	<div class="container">
-		<div class="table-responsive">
-			<table class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						<th>Team name</th>
-						<th>Job</th>
-						<th>Company</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for team in teams_list %}
+		<div id="teamList">
+			<h3>All Teams List</h3>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
 						<tr>
-							<td> {{ team.teamname }} </td>
-							<td> {{ team.job }} </td>
-							<td> {{ team.company }} </td>
+							<th>Team name</th>
+							<th>Job</th>
+							<th>Company</th>
 						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{% for team in teams_list %}
+							<tr>
+								<td> {{ team.teamname }} </td>
+								<td> {{ team.job }} </td>
+								<td> {{ team.company }} </td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
 		</div>
-	
 	</div>
 
 {% endblock %}

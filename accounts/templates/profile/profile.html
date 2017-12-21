@@ -1,26 +1,33 @@
 {% extends 'navigationbar.html' %}
 
+{% load staticfiles %}
+
 {% block title %}
 	<title>Team Details</title>
+{% endblock %}
+
+{% block customcss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
 {% endblock %}
 
 {% block custombody %}
 	
 	<div class="container">
-		<h2>Team Details</h2>
-		<p><b>Team Name</b> : {{ user.username }}</p>
-		<p><b>Team Email</b> : {{ user.email }}</p>
-		<form method="post">
-			{% csrf_token %}
-			{% for fields in form %}
-				<div class="form-group">
-					{{ fields }}
-				</div>
-			{% endfor %}
+		<div id="updateForm">
+			<h2>Team Details</h2>
+			<p><b>Team Name</b> : {{ user.username }}</p>
+			<p><b>Team Email</b> : {{ user.email }}</p>
+			<form method="post">
+				{% csrf_token %}
+				{% for fields in form %}
+					<div class="form-group">
+						{{ fields }}
+					</div>
+				{% endfor %}
 
-			<input type="submit" name="update" value="Update">
-		</form>
-
+				<input type="submit" name="update" value="Update" class="updateFormButton">
+			</form>
+		</div>
 	</div>
 
 {% endblock %}
