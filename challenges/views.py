@@ -7,9 +7,22 @@ from . import models
 
 # Create your views here.
 
+class PassInsideView() :
+	name = ''
+	category = ''
+	def __init__(self, name, category) :
+		self.name = name
+		self.category = category
+
 @login_required(login_url="/accounts/login")
 def index(request) :
-	return render(request, 'challenges.html')
+	challenge = models.Challenges.objects.all()
+	challenge_info_stego_object = []
+	for c in challenge :
+		if c.category == 'Stegnography' :
+			g = PassInsideView(c.name, c.category)
+			challenge_info_stego_object.append(g)
+	return render(request, 'challenges.html',{'data_stego':challenge_info_stego_object})
 
 @login_required(login_url="/accounts/login")
 def addchallenges(request) :
