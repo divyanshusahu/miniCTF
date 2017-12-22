@@ -17,7 +17,7 @@
 		<div class="container">
 			<div class="challengesSet">
 				
-				<div id="category1">
+				<!--<div id="category1">
 					<div class="heading">
 						<h2>Category 1</h2>
 					</div>
@@ -73,13 +73,110 @@
 							</tbody>
 						</table>
 					</div>
+				</div>-->
+
+				<div id="crypto">
+					<div class="heading">
+						<h1>Cryptography</h1>
+					</div>
+					{% if data_crypto %}
+						{% for mission in data_crypto %}
+							<div class="mission">
+								<p>{{ mission.name }}</p>
+								<p>{{ mission.points }}</p>
+							</div>
+						{% endfor %}
+
+					{% else %}
+						<p style="color: red"><b>No challenges available yet</b></p>
+					{% endif %}
 				</div>
 
-				{% for mission in data_stego %}
-					<div>
-						{{ mission.name }}
+				<div id="for">
+					<div class="heading">
+						<h1>Forensics</h1>
 					</div>
-				{% endfor %}
+					{% if data_for %}
+						{% for mission in data_for %}
+							<div class="mission">
+								<p>{{ mission.name }}</p>
+								<p>{{ mission.points }}</p>
+							</div>
+						{% endfor %}
+
+					{% else %}
+						<p style="color: red"><b>No challenges available yet</b></p>
+					{% endif %}
+				</div>
+
+				<div id="pwn">
+					<div class="heading">
+						<h1>Pwning</h1>
+					</div>
+					{% if data_pwn %}
+						{% for mission in data_pwn %}
+							<div class="mission">
+								<p>{{ mission.name }}</p>
+								<p>{{ mission.points }}</p>
+							</div>
+						{% endfor %}
+
+					{% else %}
+						<p style="color: red"><b>No challenges available yet</b></p>
+					{% endif %}
+				</div>
+
+				<div id="re">
+					<div class="heading">
+						<h1>Reverse Engineering</h1>
+					</div>
+					{% if data_re %}
+						{% for mission in data_re %}
+							<div class="mission">
+								<p>{{ mission.name }}</p>
+								<p>{{ mission.points }}</p>
+							</div>
+						{% endfor %}
+
+					{% else %}
+						<p style="color: red"><b>No challenges available yet</b></p>
+					{% endif %}
+				</div>
+
+				<div id="stego">
+					<div class="heading">
+						<h1>Stegnography</h1>
+					</div>
+					{% if data_stego %}
+						{% for mission in data_stego %}
+							<div class="mission">
+								<p>{{ mission.name }}</p>
+								<p>{{ mission.points }}</p>
+							</div>
+						{% endfor %}
+
+					{% else %}
+						<p style="color: red"><b>No challenges available yet</b></p>
+					{% endif %}				
+				</div>
+
+				<div id="web">
+					<div class="heading">
+						<h1>Web</h1>
+					</div>
+					{% if data_web %}
+						{% for mission in data_web %}
+							<div class="mission">
+								<p>{{ mission.name }}</p>
+								<p>{{ mission.points }}</p>
+							</div>
+						{% endfor %}
+
+					{% else %}
+						<p style="color: red"><b>No challenges available yet</b></p>
+					{% endif %}
+				</div>
+
 			</div>
 		</div>
 	</div>
