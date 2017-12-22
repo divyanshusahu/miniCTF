@@ -1,1 +1,13 @@
 db.sqlite3
+accounts/__pycache__
+accounts/migrations
+challenges/__pycache__
+challenges/migrations
+challenges/media
+home/__pycache__
+home/migrations
+minictf/__pycache__
+scoreboard/__pycache__
+scoreboard/migrations
+teams/__pycache__
+teams/migrations
