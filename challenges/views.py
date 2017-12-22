@@ -60,8 +60,11 @@ def addchallenges(request) :
 		if request.method == 'POST' :
 			form = forms.AddChallengeForm(request.POST, request.FILES)
 			if form.is_valid() :
-				i = models.Challenges(file=request.FILES['file'], name=request.POST['name'], category=request.POST['category'], description=request.POST['description'], points=request.POST['points'], flag=request.POST['flag'], author=request.POST['author'])
-				i.save()
+				if request.FILES :
+					i = models.Challenges(file=request.FILES['file'], name=request.POST['name'], category=request.POST['category'], description=request.POST['description'], points=request.POST['points'], flag=request.POST['flag'], author=request.POST['author'])
+					i.save()
+				else :
+					form.save()
 				return HttpResponse("Challenge added<br><a href='/challenges/'>challenges</a>")
 		else :
 			form = forms.AddChallengeForm()
