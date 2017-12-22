@@ -70,6 +70,14 @@ a:visited {
 	display: none;
 }
 
+#footer {
+	width: 100%;
+	height: 100px;
+	background-color: #444;
+	position: absolute;
+	bottom: 0;
+}
+
 @media screen and (max-width: 1200px) {
 
 	.navigationBarLeft ul li:not(:first-child), .navigationBarRight ul li:not(:first-child) {

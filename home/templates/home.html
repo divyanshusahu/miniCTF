@@ -1,11 +1,33 @@
 {% extends 'navigationbar.html' %}
 
+{% load staticfiles %}
+
 {% block title %}
 	<title>MiniCTF</title>
 {% endblock %}
 
+{% block customcss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% endblock %}
+
 {% block custombody %}
 	<div class="container">
-		<h1>Welcome to miniCTF</h1>
+		<div id="details">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<p>WELCOME TO miniCTF</p>
+					<p>This is a Platform made in django for hosting Capture The Flag(CTF) event.</p>
+					<p>Features:</p>
+					<ol>
+						<li>Simple Interface</li>
+						<li>Scoreboard</li>
+						<li>Sqlite3 database</li>
+					</ol>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<p>To add challenges admins/superusers will visit <a href="/challenges/admin/add" target="_blank">here</a></p>
+				</div>
+			</div>
+		</div>
 	</div>
 {% endblock %}

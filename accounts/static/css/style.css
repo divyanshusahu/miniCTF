@@ -4,6 +4,8 @@
 	height: auto;
 	margin: 10% auto;
 	background-color: #eee;
+	box-shadow: 5px 10px 8px 5px #888;
+	border: 1px solid #efe;
 }
 
 .registerTop {
