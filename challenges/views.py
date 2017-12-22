@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from . import forms
 from django.http import HttpResponse
+from . import models
 
 # Create your views here.
 
@@ -17,7 +18,8 @@ def addchallenges(request) :
 		if request.method == 'POST' :
 			form = forms.AddChallengeForm(request.POST, request.FILES)
 			if form.is_valid() :
-				form.save()
+				i = models.Challenges(files=request.FILES['file'], name=request.POST['name'], category=request.POST['category'], description=request.POST['description'], points=request.POST['points'], flag=request.POST['flag'], author=request.POST['author'])
+				i.save()
 				return HttpResponse("Challenge added<br><a href='/challenges/'>challenges</a>")
 		else :
 			form = forms.AddChallengeForm()

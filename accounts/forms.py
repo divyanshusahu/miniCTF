@@ -18,8 +18,8 @@ class LoginForm(AuthenticationForm) :
 class UpdateTeamDetails(forms.ModelForm) :
 	#teamname = forms.CharField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Team Name','class':'form-control'}))
 	#email = forms.EmailField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Team Email','class':'form-control', 'type':'email'}))
-	job = forms.CharField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Job','class':'form-control'}))
-	company = forms.CharField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Company','class':'form-control'}))
+	job = forms.CharField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Job','class':'form-control'}), required=False)
+	company = forms.CharField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Company','class':'form-control'}), required=False)
 
 	class Meta :
 		model = models.Teams

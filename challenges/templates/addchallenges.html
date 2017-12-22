@@ -14,7 +14,7 @@
 	<div class="container">
 		<div id="addChallenge">
 			<h3>Add challenges</h3>
-			<form method="post" enctype="multipart/form-data", autocomplete="">
+			<form method="post" enctype="multipart/form-data">
 				{% csrf_token %}
 				{% for c in form %}
 					<div class="form-group">

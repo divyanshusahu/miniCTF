@@ -39,7 +39,7 @@ def register(request) :
 
 @login_required(login_url="/accounts/login/")
 def profile(request) :
-
+	print(models.Teams.objects.filter(teamname=request.user))
 	if request.method == 'POST' :
 		form = forms.UpdateTeamDetails(request.POST)
 		if form.is_valid() :
