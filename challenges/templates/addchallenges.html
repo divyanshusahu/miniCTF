@@ -14,7 +14,7 @@
 	<div class="container">
 		<div id="addChallenge">
 			<h3>Add challenges</h3>
-			<form method="post">
+			<form method="post" enctype="multipart/form-data", autocomplete="">
 				{% csrf_token %}
 				{% for c in form %}
 					<div class="form-group">
@@ -25,6 +25,7 @@
 				<input type="submit" name="add" value="Add" class="btn btn-primary">
 			</form>
 		</div>
+		<p><b>NOTE: Fields marked with (*) are required.</b></p>
 		<p><b>NOTE: One one file is uploaded per challenge. If there is more than one file than first compress all files into single file than upload. </b></p>
 		<p><b>NOTE: Use admin panel to remove challenge</b></p>
 	</div>
