@@ -57,3 +57,7 @@ def profile(request) :
 		form = forms.UpdateTeamDetails(initial=form_data)
 		
 	return render(request, 'profile/profile.html', {'form':form})
+
+def team_view(request) :
+	team_details = models.Teams.objects.get(teamname=request.user)
+	return render(request, 'team/team.html',{'team_details':team_details})

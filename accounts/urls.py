@@ -8,5 +8,6 @@ urlpatterns = [
 	path('login/', views.login, {'template_name':'login/login.html','authentication_form':forms.LoginForm}),
 	path('logout/', views.logout, {'next_page':'/'}, name="logout"),
 	path('register/', manual_views.register, name="register"),
-	path('profile/', manual_views.profile, name="profile")
+	path('profile/', manual_views.profile, name="profile"),
+	path('team/', manual_views.team_view, name="team_view")
 ]

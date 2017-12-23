@@ -1,0 +1,47 @@
+{% extends 'navigationbar.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+	<title>{{ team_details.teamname }}</title>
+{% endblock %}
+
+{% block customcss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/team.css' %}">
+{% endblock %}
+
+{% block custombody %}
+	<div class="container">
+		<div id="team_details">
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td>Team Name</td>
+							<td>{{ team_details.teamname }}</td>
+						</tr>
+						<tr>
+							<td>Team Email</td>
+							<td>{{ team_details.email }}</td>
+						</tr>
+						<tr>
+							<td>Team Job</td>
+							<td>{{ team_details.job }}</td>
+						</tr>
+						<tr>
+							<td>Team Company</td>
+							<td>{{ team_details.company }}</td>
+						</tr>
+						<tr>
+							<td>Team Points</td>
+							<td>{{ team_details.points }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="solved_challenges">
+			<h3>Solved Challenges</h3>
+		</div>
+	</div>
+{% endblock %}
