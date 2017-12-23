@@ -23,10 +23,28 @@
 					</div>
 					{% if data_crypto %}
 						{% for mission in data_crypto %}
-							<div class="mission" id="{{ mission.challenge_id }}">
+							<div class="mission" data-toggle="modal" data-target="#{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
+
+							<div class="modal fade" id="{{ mission.challenge_id }}" role="dialog" data-backdrop="static">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">{{ mission.name }}</h4>
+										</div>
+										<div class="modal-body">
+											<p>{{ mission.description }}</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						{% endfor %}
 
 					{% else %}
@@ -40,10 +58,28 @@
 					</div>
 					{% if data_for %}
 						{% for mission in data_for %}
-							<div class="mission" id="{{ mission.challenge_id }}">
+							<div class="mission"  data-toggle="modal" data-target="#{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
+
+							<div class="modal fade" id="{{ mission.challenge_id }}" role="dialog" data-backdrop="static">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">{{ mission.name }}</h4>
+										</div>
+										<div class="modal-body">
+											<p>{{ mission.description }}</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						{% endfor %}
 
 					{% else %}
@@ -57,10 +93,28 @@
 					</div>
 					{% if data_pwn %}
 						{% for mission in data_pwn %}
-							<div class="mission" id="{{ mission.challenge_id }}">
+							<div class="mission"  data-toggle="modal" data-target="#{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
+
+							<div class="modal fade" id="{{ mission.challenge_id }}" role="dialog" data-backdrop="static">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">{{ mission.name }}</h4>
+										</div>
+										<div class="modal-body">
+											<p>{{ mission.description }}</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						{% endfor %}
 
 					{% else %}
@@ -74,10 +128,28 @@
 					</div>
 					{% if data_re %}
 						{% for mission in data_re %}
-							<div class="mission" id="{{ mission.challenge_id }}">
+							<div class="mission"  data-toggle="modal" data-target="#{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
+
+							<div class="modal fade" id="{{ mission.challenge_id }}" role="dialog" data-backdrop="static">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">{{ mission.name }}</h4>
+										</div>
+										<div class="modal-body">
+											<p>{{ mission.description }}</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						{% endfor %}
 
 					{% else %}
@@ -91,10 +163,28 @@
 					</div>
 					{% if data_stego %}
 						{% for mission in data_stego %}
-							<div class="mission" id="{{ mission.challenge_id }}">
+							<div class="mission" data-toggle="modal" data-target="#{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
+
+							<div class="modal fade" id="{{ mission.challenge_id }}" role="dialog" data-backdrop="static">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">{{ mission.name }}</h4>
+										</div>
+										<div class="modal-body">
+											<p>{{ mission.description }}</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						{% endfor %}
 
 					{% else %}
@@ -108,10 +198,28 @@
 					</div>
 					{% if data_web %}
 						{% for mission in data_web %}
-							<div class="mission" id="{{ mission.challenge_id }}">
+							<div class="mission" data-toggle="modal" data-target="#{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
+
+							<div class="modal fade" id="{{ mission.challenge_id }}" role="dialog" data-backdrop="static">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">{{ mission.name }}</h4>
+										</div>
+										<div class="modal-body">
+											<p>{{ mission.description }}</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						{% endfor %}
 
 					{% else %}
