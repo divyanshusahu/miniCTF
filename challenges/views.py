@@ -58,7 +58,32 @@ def index(request) :
 			cy = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_crypto_object.append(cy)
 
-	return render(request, 'challenges.html',{'data_stego':challenge_info_stego_object,'data_for':challenge_info_for_object,'data_re':challenge_info_re_object,'data_pwn':challenge_info_pwn_object,'data_web':challenge_info_web_object,'data_crypto':challenge_info_crypto_object})
+	if request.method == 'POST' :
+		x = ''
+		for k in request.POST :
+			if k == 'submit' :
+				continue
+			if k == 'csrfmiddlewaretoken' :
+				continue
+			else :
+				x = k
+		flag_submit = request.POST[x]
+		flag_submit_id = x[:-5]
+		return render(request, 'challenges.html',{'data_stego':challenge_info_stego_object,
+		'data_for':challenge_info_for_object,
+		'data_re':challenge_info_re_object,
+		'data_pwn':challenge_info_pwn_object,
+		'data_web':challenge_info_web_object,
+		'data_crypto':challenge_info_crypto_object,
+		'flag_submit':flag_submit,
+		'flag_submit_id':flag_submit_id})
+	else :
+		return render(request, 'challenges.html',{'data_stego':challenge_info_stego_object,
+		'data_for':challenge_info_for_object,
+		'data_re':challenge_info_re_object,
+		'data_pwn':challenge_info_pwn_object,
+		'data_web':challenge_info_web_object,
+		'data_crypto':challenge_info_crypto_object})
 
 @login_required(login_url="/accounts/login")
 def addchallenges(request) :
@@ -70,7 +95,13 @@ def addchallenges(request) :
 			if form.is_valid() :
 				success = 1
 				if request.FILES :
-					i = models.Challenges(file=request.FILES['file'], name=request.POST['name'], category=request.POST['category'], description=request.POST['description'], points=request.POST['points'], flag=request.POST['flag'], author=request.POST['author'])
+					i = models.Challenges(file=request.FILES['file'], 
+						name=request.POST['name'], 
+						category=request.POST['category'], 
+						description=request.POST['description'], 
+						points=request.POST['points'], 
+						flag=request.POST['flag'], 
+						author=request.POST['author'])
 					i.save()
 				else :
 					form.save()
