@@ -47,12 +47,14 @@ def profile(request) :
 	form_data = {'job':j, 'company':c}
 	if request.method == 'POST' :
 		form = forms.UpdateTeamDetails(request.POST)
+		success = 0
 		if form.is_valid() :
 			job = form.cleaned_data.get("job")
 			company = form.cleaned_data.get("company")
 			team = request.user
 			models.Teams.objects.filter(teamname=team).update(job=job, company=company)
-			return HttpResponse("Details Updated.<br><a href='/accounts/profile'>Return Back</a>")
+			success = 1
+			return render(request, 'profile/profile.html', {'form':form, 'success':success})
 	else :
 		form = forms.UpdateTeamDetails(initial=form_data)
 		

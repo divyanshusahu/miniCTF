@@ -12,6 +12,17 @@
 
 {% block custombody %}
 	<div class="container">
+		{% if request.method == 'POST' %}
+			{% if success %}
+				<div id="success">
+					<p>Challenge added</p>
+				</div>
+			{% else %}
+				<div id="failure">
+					<p>Some Error Occured</p>
+				</div>
+			{% endif %}
+		{% endif %}
 		<div id="addChallenge">
 			<h3>Add challenges</h3>
 			<form method="post" enctype="multipart/form-data" autocomplete="off">

@@ -24,7 +24,7 @@
 	height: 100px;
 	width: 300px;
 	display: inline-block;
-	background-color: #f54;
+	background-color: #f44336;
 	transition: 0.5s;
 	text-align: center;
 	font-size: 20px;
@@ -37,8 +37,16 @@
 }
 
 .mission:hover {
-	background-color: #66f;
+	background-color: #008cba;
 	color: #fff;
+}
+
+.modal a {
+	color: #008cba;
+}
+
+.modal a:hover {
+	text-decoration: underline;
 }
 
 .modal {
