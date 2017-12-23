@@ -58,6 +58,9 @@ def profile(request) :
 		
 	return render(request, 'profile/profile.html', {'form':form})
 
+@login_required(login_url="/accounts/login/")
 def team_view(request) :
+	if request.user.is_superuser :
+		return HttpResponseRedirect("/teams/")
 	team_details = models.Teams.objects.get(teamname=request.user)
 	return render(request, 'team/team.html',{'team_details':team_details})

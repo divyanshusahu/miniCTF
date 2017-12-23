@@ -17,71 +17,13 @@
 		<div class="container">
 			<div class="challengesSet">
 				
-				<!--<div id="category1">
-					<div class="heading">
-						<h2>Category 1</h2>
-					</div>
-					<div class="categorySet">
-						<table>
-							<tbody>
-								<tr>
-									<td>Challenge 1</td>
-									<td>Challenge 2</td>
-									<td>Challenge 3</td>
-									<td>Challenge 4</td>
-									<td>Challenge 5</td>
-								</tr>
-								<tr>
-									<td>Challenge 6</td>
-									<td>Challenge 7</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-				<div id="category2">
-					<div class="heading">
-						<h2>Category 2</h2>
-					</div>
-					<div class="categorySet">
-						<table>
-							<tbody>
-								<tr>
-									<td>Challenge 1</td>
-									<td>Challenge 2</td>
-									<td>Challenge 3</td>
-									<td>Challenge 4</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-				<div id="category3">
-					<div class="heading">
-						<h2>Category 3</h2>
-					</div>
-					<div class="categorySet">
-						<table>
-							<tbody>
-								<tr>
-									<td>Challenge 1</td>
-									<td>Challenge 2</td>
-									<td>Challenge 3</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>-->
-
 				<div id="crypto">
 					<div class="heading">
 						<h1>Cryptography</h1>
 					</div>
 					{% if data_crypto %}
 						{% for mission in data_crypto %}
-							<div class="mission">
+							<div class="mission" id="{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -98,7 +40,7 @@
 					</div>
 					{% if data_for %}
 						{% for mission in data_for %}
-							<div class="mission">
+							<div class="mission" id="{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -115,7 +57,7 @@
 					</div>
 					{% if data_pwn %}
 						{% for mission in data_pwn %}
-							<div class="mission">
+							<div class="mission" id="{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -132,7 +74,7 @@
 					</div>
 					{% if data_re %}
 						{% for mission in data_re %}
-							<div class="mission">
+							<div class="mission" id="{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -149,7 +91,7 @@
 					</div>
 					{% if data_stego %}
 						{% for mission in data_stego %}
-							<div class="mission">
+							<div class="mission" id="{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -166,7 +108,7 @@
 					</div>
 					{% if data_web %}
 						{% for mission in data_web %}
-							<div class="mission">
+							<div class="mission" id="{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
