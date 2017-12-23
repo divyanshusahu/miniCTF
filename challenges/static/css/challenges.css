@@ -44,3 +44,31 @@
 .modal {
 	margin-top: 10%;
 }
+
+.input_flag {
+	width: 80%;
+	padding:10px;
+	background-color: #eee;
+	border: 0;
+	border-radius: 5px;
+}
+
+.input_flag_button {
+	height: 40px;
+	background-color: #008cba;
+	border: 0;
+	width: 100px;
+	color: #fff;
+	font-size: 16px;
+	text-decoration: none;
+	display: inline-block;
+	transition: 0.5s;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	margin-left: 5px;
+}
+
+.input_flag_button:hover {
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #008cba;
+}

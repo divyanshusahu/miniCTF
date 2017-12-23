@@ -36,7 +36,18 @@
 											<h4 class="modal-title">{{ mission.name }}</h4>
 										</div>
 										<div class="modal-body">
+											<p><b>Challenge Description: </b></p>
 											<p>{{ mission.description }}</p>
+											{% if mission.file %}
+												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+											{% endif %}
+											<p><b>Points: </b>{{ mission.points }}</p>
+											<p><b>Author: </b>{{ mission.author }}</p>
+											<form method="post">
+												{% csrf_token %}
+												<input type="text" name="flag_text" placeholder="Submit Flag" class="input_flag">
+												<input type="submit" name="flag_submit" value="Submit" class="input_flag_button">
+											</form>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -72,6 +83,16 @@
 										</div>
 										<div class="modal-body">
 											<p>{{ mission.description }}</p>
+											{% if mission.file %}
+												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+											{% endif %}
+											<p><b>Points: </b>{{ mission.points }}</p>
+											<p><b>Author: </b>{{ mission.author }}</p>
+											<form method="post">
+												{% csrf_token %}
+												<input type="text" name="flag_text" placeholder="Submit Flag" class="input_flag">
+												<input type="submit" name="flag_submit" value="Submit" class="input_flag_button">
+											</form>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -107,6 +128,16 @@
 										</div>
 										<div class="modal-body">
 											<p>{{ mission.description }}</p>
+											{% if mission.file %}
+												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+											{% endif %}
+											<p><b>Points: </b>{{ mission.points }}</p>
+											<p><b>Author: </b>{{ mission.author }}</p>
+											<form method="post">
+												{% csrf_token %}
+												<input type="text" name="flag_text" placeholder="Submit Flag" class="input_flag">
+												<input type="submit" name="flag_submit" value="Submit" class="input_flag_button">
+											</form>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -142,6 +173,16 @@
 										</div>
 										<div class="modal-body">
 											<p>{{ mission.description }}</p>
+											{% if mission.file %}
+												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+											{% endif %}
+											<p><b>Points: </b>{{ mission.points }}</p>
+											<p><b>Author: </b>{{ mission.author }}</p>
+											<form method="post">
+												{% csrf_token %}
+												<input type="text" name="flag_text" placeholder="Submit Flag" class="input_flag">
+												<input type="submit" name="flag_submit" value="Submit" class="input_flag_button">
+											</form>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -177,6 +218,16 @@
 										</div>
 										<div class="modal-body">
 											<p>{{ mission.description }}</p>
+											{% if mission.file %}
+												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+											{% endif %}
+											<p><b>Points: </b>{{ mission.points }}</p>
+											<p><b>Author: </b>{{ mission.author }}</p>
+											<form method="post">
+												{% csrf_token %}
+												<input type="text" name="flag_text" placeholder="Submit Flag" class="input_flag">
+												<input type="submit" name="flag_submit" value="Submit" class="input_flag_button">
+											</form>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -212,6 +263,16 @@
 										</div>
 										<div class="modal-body">
 											<p>{{ mission.description }}</p>
+											{% if mission.file %}
+												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+											{% endif %}
+											<p><b>Points: </b>{{ mission.points }}</p>
+											<p><b>Author: </b>{{ mission.author }}</p>
+											<form method="post">
+												{% csrf_token %}
+												<input type="text" name="flag_text" placeholder="Submit Flag" class="input_flag">
+												<input type="submit" name="flag_submit" value="Submit" class="input_flag_button">
+											</form>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

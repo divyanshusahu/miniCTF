@@ -23,3 +23,6 @@ class AddChallengeForm(forms.ModelForm) :
 	class Meta :
 		model = models.Challenges
 		fields = ["name","category","description","points","file","flag","author"]
+
+class SubmitFlagForm(forms.Form) :
+	flag_input = forms.CharField(max_length=500, widget=forms.TextInput(attrs={'placeholder':'Submit Flag'}))

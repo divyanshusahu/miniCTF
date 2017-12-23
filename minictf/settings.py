@@ -132,6 +132,6 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = '/challenges/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'challenges/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'challenges/media/')
 
-MEDIA_URL = '/challenges/media/'
+MEDIA_URL = 'uploads/'

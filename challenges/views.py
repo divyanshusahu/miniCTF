@@ -14,14 +14,16 @@ class PassInsideView() :
 	description = ''
 	points = ''
 	file = ''
+	flag = ''
 	author = ''
-	def __init__(self, name, challenge_id, category, description, points, file, author) :
+	def __init__(self, name, challenge_id, category, description, points, file, flag, author) :
 		self.name = name
 		self.challenge_id = challenge_id
 		self.category = category
 		self.description = description
 		self.points = points
 		self.file = file
+		self.flag = flag
 		self.author = author
 
 def assignID(a) :
@@ -38,22 +40,22 @@ def index(request) :
 	challenge_info_crypto_object = []
 	for c in challenge :
 		if c.category == 'Stegnography' :
-			s = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.author)
+			s = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_stego_object.append(s)
 		elif c.category == 'Reverse Engineering' :
-			re = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.author)
+			re = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_re_object.append(re)
 		elif c.category == 'Forensics' :
-			f = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.author)
+			f = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_for_object.append(f)
 		elif c.category == 'Pwning' :
-			p = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.author)
+			p = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_pwn_object.append(p)
 		elif c.category == 'Web' :
-			w = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.author)
+			w = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_web_object.append(w)
 		elif c.category == 'Cryptography' :
-			cy = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.author)
+			cy = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_crypto_object.append(cy)
 
 	return render(request, 'challenges.html',{'data_stego':challenge_info_stego_object,'data_for':challenge_info_for_object,'data_re':challenge_info_re_object,'data_pwn':challenge_info_pwn_object,'data_web':challenge_info_web_object,'data_crypto':challenge_info_crypto_object})
