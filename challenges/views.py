@@ -29,7 +29,7 @@ class PassInsideView() :
 def assignID(a) :
 	return a.lower().replace(' ','_')
 
-@login_required(login_url="/accounts/login")
+@login_required(login_url="/accounts/login/")
 def index(request) :
 	challenge = models.Challenges.objects.order_by("points")
 	challenge_info_stego_object = []
@@ -58,7 +58,19 @@ def index(request) :
 			cy = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_crypto_object.append(cy)
 
+	
+	return render(request, 'challenges.html',{'data_stego':challenge_info_stego_object,
+		'data_for':challenge_info_for_object,
+		'data_re':challenge_info_re_object,
+		'data_pwn':challenge_info_pwn_object,
+		'data_web':challenge_info_web_object,
+		'data_crypto':challenge_info_crypto_object})
+
+@login_required(login_url="/accounts/login/")
+def flagsubmit(request) :
 	if request.method == 'POST' :
+		flag_submit = ''
+		flag_submit_id = ''
 		x = ''
 		for k in request.POST :
 			if k == 'submit' :
@@ -69,23 +81,14 @@ def index(request) :
 				x = k
 		flag_submit = request.POST[x]
 		flag_submit_id = x[:-5]
-		return render(request, 'challenges.html',{'data_stego':challenge_info_stego_object,
-		'data_for':challenge_info_for_object,
-		'data_re':challenge_info_re_object,
-		'data_pwn':challenge_info_pwn_object,
-		'data_web':challenge_info_web_object,
-		'data_crypto':challenge_info_crypto_object,
-		'flag_submit':flag_submit,
-		'flag_submit_id':flag_submit_id})
+	flag = models.Challenges.objects.get(challenge_id=flag_submit_id).flag
+	if flag == flag_submit :
+		response = '<div id="flag_correct"><p>CORRECT</p></div>'
 	else :
-		return render(request, 'challenges.html',{'data_stego':challenge_info_stego_object,
-		'data_for':challenge_info_for_object,
-		'data_re':challenge_info_re_object,
-		'data_pwn':challenge_info_pwn_object,
-		'data_web':challenge_info_web_object,
-		'data_crypto':challenge_info_crypto_object})
+		response = '<div id="flag_incorrect"><p>INCORRECT</p></div>'
+	return HttpResponse(response)
 
-@login_required(login_url="/accounts/login")
+@login_required(login_url="/accounts/login/")
 def addchallenges(request) :
 	
 	if request.user.is_superuser :
@@ -99,12 +102,21 @@ def addchallenges(request) :
 						name=request.POST['name'], 
 						category=request.POST['category'], 
 						description=request.POST['description'], 
-						points=request.POST['points'], 
+						points=request.POST['points'],
+						challenge_id=assignID(request.POST['name']),
 						flag=request.POST['flag'], 
 						author=request.POST['author'])
 					i.save()
 				else :
-					form.save()
+					i = models.Challenges( 
+						name=request.POST['name'], 
+						category=request.POST['category'], 
+						description=request.POST['description'], 
+						points=request.POST['points'],
+						challenge_id=assignID(request.POST['name']),
+						flag=request.POST['flag'], 
+						author=request.POST['author'])
+					i.save()
 				return render(request, 'addchallenges.html', {'form':form,'success':success})
 		else :
 			form = forms.AddChallengeForm()
