@@ -92,7 +92,14 @@
 					</div>
 					{% if data_for %}
 						{% for mission in data_for %}
-							<div class="mission"  data-toggle="modal" data-target="#{{ mission.challenge_id }}">
+							{% if mission.challenge_id in user_solved %}
+								<script type="text/javascript">
+									$(document).ready(function() {
+										$("#display_{{ mission.challenge_id }}").addClass("solved");
+									});									
+								</script>
+							{% endif %}
+							<div class="mission"  data-toggle="modal" data-target="#{{ mission.challenge_id }}" id="display_{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -154,7 +161,14 @@
 					</div>
 					{% if data_pwn %}
 						{% for mission in data_pwn %}
-							<div class="mission"  data-toggle="modal" data-target="#{{ mission.challenge_id }}">
+							{% if mission.challenge_id in user_solved %}
+								<script type="text/javascript">
+									$(document).ready(function() {
+										$("#display_{{ mission.challenge_id }}").addClass("solved");
+									});									
+								</script>
+							{% endif %}
+							<div class="mission"  data-toggle="modal" data-target="#{{ mission.challenge_id }}" id="display_{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -216,7 +230,14 @@
 					</div>
 					{% if data_re %}
 						{% for mission in data_re %}
-							<div class="mission"  data-toggle="modal" data-target="#{{ mission.challenge_id }}">
+							{% if mission.challenge_id in user_solved %}
+								<script type="text/javascript">
+									$(document).ready(function() {
+										$("#display_{{ mission.challenge_id }}").addClass("solved");
+									});									
+								</script>
+							{% endif %}
+							<div class="mission"  data-toggle="modal" data-target="#{{ mission.challenge_id }}" id="display_{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -278,7 +299,14 @@
 					</div>
 					{% if data_stego %}
 						{% for mission in data_stego %}
-							<div class="mission" data-toggle="modal" data-target="#{{ mission.challenge_id }}">
+							{% if mission.challenge_id in user_solved %}
+								<script type="text/javascript">
+									$(document).ready(function() {
+										$("#display_{{ mission.challenge_id }}").addClass("solved");
+									});									
+								</script>
+							{% endif %}
+							<div class="mission" data-toggle="modal" data-target="#{{ mission.challenge_id }}" id="display_{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -295,7 +323,6 @@
 											<p>{{ mission.description }}</p>
 											{% if mission.file %}
 												<p><b>File:</b> <a href="uploads/{{ mission.file }}">download</a></p>
-												<img src="{{ mission.file }}">
 											{% endif %}
 											<p><b>Points: </b>{{ mission.points }}</p>
 											<p><b>Author: </b>{{ mission.author }}</p>
@@ -341,7 +368,14 @@
 					</div>
 					{% if data_web %}
 						{% for mission in data_web %}
-							<div class="mission" data-toggle="modal" data-target="#{{ mission.challenge_id }}">
+							{% if mission.challenge_id in user_solved %}
+								<script type="text/javascript">
+									$(document).ready(function() {
+										$("#display_{{ mission.challenge_id }}").addClass("solved");
+									});									
+								</script>
+							{% endif %}
+							<div class="mission" data-toggle="modal" data-target="#{{ mission.challenge_id }}" id="display_{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>

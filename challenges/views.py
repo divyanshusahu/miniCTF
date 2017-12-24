@@ -100,7 +100,6 @@ def flagsubmit(request) :
 			obs = []
 			for k in fc :
 				obs.append(k.challenge_id)
-			print(flag_submit_id, obs)
 			if flag_submit_id in obs :
 				response = '<div id="flag_already"><p>ALREADY SUBMITTED</p></div>'
 			else :
