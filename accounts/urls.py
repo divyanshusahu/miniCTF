@@ -9,5 +9,6 @@ urlpatterns = [
 	path('logout/', views.logout, {'next_page':'/'}, name="logout"),
 	path('register/', manual_views.register, name="register"),
 	path('profile/', manual_views.profile, name="profile"),
-	path('team/', manual_views.team_view, name="team_view")
+	path('team/', manual_views.team_view, name="team_view"),
+	path('profile/changepassword/', manual_views.update_password, name="update_password")
 ]

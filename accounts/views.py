@@ -2,10 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from . import forms
 from . import models
-from django.contrib.auth import authenticate, login 
+from django.contrib.auth import authenticate, login , update_session_auth_hash
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from challenges.models import ChallengesSolvedBy
+from django.contrib import messages
+from django.contrib.auth.forms import PasswordChangeForm
 
 # Create your views here.
 
@@ -67,3 +69,19 @@ def team_view(request) :
 	team_details = models.Teams.objects.get(teamname=request.user)
 	solved_challenges = ChallengesSolvedBy.objects.filter(user_name=request.user)
 	return render(request, 'team/team.html',{'team_details':team_details,'solved_challenges':solved_challenges})
+
+@login_required(login_url="/accounts/login/")
+def update_password(request) :
+	if request.method == 'POST' :
+		form = PasswordChangeForm(request.user, request.POST)
+		if form.is_valid() :
+			user = form.save()
+			update_session_auth_hash(request, user)
+			messages.success(request, 'Your password was successfully updated!')
+			return HttpResponseRedirect("/challenges/")
+		else :
+			messages.error(request, 'Please correct the error below.')
+	else :
+		form = PasswordChangeForm(request.user)
+	
+	return render(request, 'profile/change-password.html',{'form':form})
