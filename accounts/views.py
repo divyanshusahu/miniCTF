@@ -5,6 +5,7 @@ from . import models
 from django.contrib.auth import authenticate, login 
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from challenges.models import ChallengesSolvedBy
 
 # Create your views here.
 
@@ -41,7 +42,6 @@ def register(request) :
 def profile(request) :
 	if request.user.is_superuser :
 		return HttpResponseRedirect("/teams/")
-	#print(models.Teams.objects.filter(teamname=request.user))
 	j = models.Teams.objects.get(teamname=request.user).job
 	c = models.Teams.objects.get(teamname=request.user).company
 	form_data = {'job':j, 'company':c}
@@ -65,4 +65,5 @@ def team_view(request) :
 	if request.user.is_superuser :
 		return HttpResponseRedirect("/teams/")
 	team_details = models.Teams.objects.get(teamname=request.user)
-	return render(request, 'team/team.html',{'team_details':team_details})
+	solved_challenges = ChallengesSolvedBy.objects.filter(user_name=request.user)
+	return render(request, 'team/team.html',{'team_details':team_details,'solved_challenges':solved_challenges})

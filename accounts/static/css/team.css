@@ -1,5 +1,6 @@
-#team_details {
+#team_details h3 {
 	margin-top: 10%;
+	text-align: center;
 }
 
 #solved_challenges h3 {
