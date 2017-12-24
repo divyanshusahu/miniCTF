@@ -95,8 +95,12 @@ def flagsubmit(request) :
 	if flag == flag_submit :
 		fr = models.ChallengesSolvedBy(challenge_id=flag_submit_id, user_name=request.user, points=points)
 		try :
-			fc = models.ChallengesSolvedBy.objects.get(user_name=request.user).challenge_id
-			if flag_submit_id in fc :
+			fc = models.ChallengesSolvedBy.objects.filter(user_name=request.user)
+			obs = []
+			for k in fc :
+				obs.append(k.challenge_id)
+			print(flag_submit_id, obs)
+			if flag_submit_id in obs :
 				response = '<div id="flag_already"><p>ALREADY SUBMITTED</p></div>'
 			else :
 				fr.save()
