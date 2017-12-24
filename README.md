@@ -4,15 +4,14 @@
 
 #### Live demo 
 
-[website](https://dashboard.heroku.com/apps)
+###### Available Soon
 
 #### FEATURES :
 
 * Cool Interface
 * Score Board
 * Responsive Design
-* Email Conformation support
-* Forgot password support
+* Password Change Support 
 * and a lot more.
 
 #### SCREENSHOTS :
@@ -46,13 +45,21 @@ python 3.5.x
 django 2.0
 ```
 
-###### Install
+###### Install django
 
+```sh
+$ sudo pip3 install django
 ```
-git clone https://github.com/DivyanshuSahu/minictf.git
-django-admin startproject minictf
-copy all folders inside git clone to django project folder
-python manage.py makemigrations accounts challenges
-python manage.py migrate
-python manage.py runserver
+
+###### Install miniCTF
+
+```sh
+$ git clone https://github.com/DivyanshuSahu/miniCTF.git
+$ django-admin startproject minictf
+copy all files and folders from git clone folder(miniCTF) to django project folder(minictf), then
+$ python manage.py makemigrations accounts challenges
+$ python manage.py migrate
+$ python manage.py runserver
 ```
+
+Then register or create superuser and add challenges.
