@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from . import forms
 from django.http import HttpResponse
 from . import models
+from accounts import models as accounts_models
 
 # Create your views here.
 
@@ -58,13 +59,21 @@ def index(request) :
 			cy = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_crypto_object.append(cy)
 
-	
+	solved_challenges_by_user = []
+	try :
+		fc = models.ChallengesSolvedBy.objects.filter(user_name=request.user)
+		for f in fc :
+			solved_challenges_by_user.append(f.challenge_id)
+	except :
+		pass
+
 	return render(request, 'challenges.html',{'data_stego':challenge_info_stego_object,
 		'data_for':challenge_info_for_object,
 		'data_re':challenge_info_re_object,
 		'data_pwn':challenge_info_pwn_object,
 		'data_web':challenge_info_web_object,
-		'data_crypto':challenge_info_crypto_object})
+		'data_crypto':challenge_info_crypto_object,
+		'user_solved':solved_challenges_by_user})
 
 @login_required(login_url="/accounts/login/")
 def flagsubmit(request) :
@@ -82,8 +91,25 @@ def flagsubmit(request) :
 		flag_submit = request.POST[x]
 		flag_submit_id = x[:-5]
 	flag = models.Challenges.objects.get(challenge_id=flag_submit_id).flag
+	points = models.Challenges.objects.get(challenge_id=flag_submit_id).points
 	if flag == flag_submit :
-		response = '<div id="flag_correct"><p>CORRECT</p></div>'
+		fr = models.ChallengesSolvedBy(challenge_id=flag_submit_id, user_name=request.user, points=points)
+		try :
+			fc = models.ChallengesSolvedBy.objects.get(user_name=request.user).challenge_id
+			if flag_submit_id in fc :
+				response = '<div id="flag_already"><p>ALREADY SUBMITTED</p></div>'
+			else :
+				fr.save()
+				initial_points = accounts_models.Teams.objects.get(teamname=request.user).points
+				updated_points = initial_points + points
+				accounts_models.Teams.objects.filter(teamname=request.user).update(points=updated_points)
+				response = '<div id="flag_correct"><p>CORRECT</p></div>'
+		except :
+			fr.save()
+			initial_points = accounts_models.Teams.objects.get(teamname=request.user).points
+			updated_points = initial_points + points
+			accounts_models.Teams.objects.filter(teamname=request.user).update(points=updated_points)
+			response = '<div id="flag_correct"><p>CORRECT</p></div>'
 	else :
 		response = '<div id="flag_incorrect"><p>INCORRECT</p></div>'
 	return HttpResponse(response)

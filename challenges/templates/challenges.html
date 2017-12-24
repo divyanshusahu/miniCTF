@@ -23,7 +23,14 @@
 					</div>
 					{% if data_crypto %}
 						{% for mission in data_crypto %}
-							<div class="mission" data-toggle="modal" data-target="#{{ mission.challenge_id }}">
+							{% if mission.challenge_id in user_solved %}
+								<script type="text/javascript">
+									$(document).ready(function() {
+										$("#display_{{ mission.challenge_id }}").addClass("solved");
+									});									
+								</script>
+							{% endif %}
+							<div class="mission" data-toggle="modal" data-target="#{{ mission.challenge_id }}" id="display_{{ mission.challenge_id }}">
 								<p>{{ mission.name }}</p>
 								<p>{{ mission.points }}</p>
 							</div>
@@ -398,6 +405,7 @@
 			$(".closeIT").click(function() {
 				$("#flag_incorrect").remove();
 				$("#flag_correct").remove();
+				$("#flag_already").remove();
 			});
 		})
 	</script>

@@ -36,6 +36,10 @@
 	margin-bottom: 10px;
 }
 
+.solved {
+	background-color: #4caf50;
+}
+
 .mission:hover {
 	background-color: #008cba;
 	color: #fff;
@@ -81,7 +85,7 @@
 	border: 1px solid #008cba;
 }
 
-#flag_correct, #flag_incorrect {
+#flag_correct, #flag_incorrect, #flag_already {
 	width: 100%;
 	height: 40px;
 	background-color: #4caf50;
@@ -95,4 +99,8 @@
 
 #flag_incorrect {
 	background-color: #f44336;
+}
+
+#flag_already {
+	background-color: #008cba;
 }

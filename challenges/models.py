@@ -15,4 +15,8 @@ class Challenges(models.Model) :
 	file = models.FileField(null=True, blank=True, upload_to=get_upload_path)
 	flag = models.CharField(max_length=500)
 	author = models.CharField(max_length=250)
-	#solved_by = models.CharField()
+
+class ChallengesSolvedBy(models.Model) :
+	challenge_id =  models.CharField(max_length=250)
+	user_name = models.CharField(max_length=250)
+	points = models.IntegerField()
