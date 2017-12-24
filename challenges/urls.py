@@ -7,4 +7,4 @@ urlpatterns = [
 	path('', views.index, name='index'),
 	path('admin/add', views.addchallenges, name="add"),
 	path('postflag/', views.flagsubmit, name="flagsubmit")
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

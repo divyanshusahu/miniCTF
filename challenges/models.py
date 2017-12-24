@@ -4,7 +4,7 @@ import hashlib
 # Create your models here.
 
 def get_upload_path(instance, filename) :
-	return 'uploads/'+instance.category+'/challenges_{0}/{1}'.format(hashlib.md5(instance.name.encode('utf-8')).hexdigest(), filename)
+	return instance.category+'/challenges_{0}/{1}'.format(hashlib.md5(instance.name.encode('utf-8')).hexdigest(), filename)
 
 class Challenges(models.Model) :
 	name = models.CharField(max_length=250, unique=True)

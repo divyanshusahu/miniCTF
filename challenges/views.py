@@ -17,6 +17,7 @@ class PassInsideView() :
 	file = ''
 	flag = ''
 	author = ''
+
 	def __init__(self, name, challenge_id, category, description, points, file, flag, author) :
 		self.name = name
 		self.challenge_id = challenge_id
@@ -127,6 +128,7 @@ def addchallenges(request) :
 			form = forms.AddChallengeForm(request.POST, request.FILES)
 			if form.is_valid() :
 				success = 1
+				print(request.FILES)
 				if request.FILES :
 					i = models.Challenges(file=request.FILES['file'], 
 						name=request.POST['name'], 

@@ -3,7 +3,7 @@ accounts/__pycache__
 accounts/migrations
 challenges/__pycache__
 challenges/migrations
-challenges/media
+challenges/uploads
 home/__pycache__
 home/migrations
 minictf/__pycache__

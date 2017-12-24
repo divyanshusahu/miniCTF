@@ -2,14 +2,18 @@
 
 ### A platform build in django for hosting CTF events. 
 
-#### Test it [here](https://dashboard.heroku.com/apps)
+#### Live demo 
+
+[website](https://dashboard.heroku.com/apps)
 
 #### FEATURES :
 
-* Simple Interface
+* Cool Interface
 * Score Board
 * Responsive Design
-* and lots of other cool features.
+* Email Conformation support
+* Forgot password support
+* and a lot more.
 
 #### SCREENSHOTS :
 
@@ -20,6 +24,18 @@ Challenge Page
 Challenge View
 
 <img src="readmeimg/onechallenge.png" width="100%">
+
+Score Board
+
+<img src="readmeimg/scoreboard.png" width="100%">
+
+Team Details
+
+<img src="readmeimg/details.png" width="100%">
+
+All Teams list
+
+<img src="readmeimg/teams.png" width="100%">
 
 #### Test it locally
 
@@ -33,7 +49,7 @@ django 2.0
 ###### Install
 
 ```
-git clone
+git clone https://github.com/DivyanshuSahu/minictf.git
 django-admin startproject minictf
 copy all folders inside git clone to django project folder
 python manage.py makemigrations accounts challenges

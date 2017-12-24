@@ -46,7 +46,7 @@
 											<p><b>Challenge Description: </b></p>
 											<p>{{ mission.description }}</p>
 											{% if mission.file %}
-												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+												<p><b>File:</b> <a href="uploads/{{ mission.file }}">download</a></p>
 											{% endif %}
 											<p><b>Points: </b>{{ mission.points }}</p>
 											<p><b>Author: </b>{{ mission.author }}</p>
@@ -108,7 +108,7 @@
 											<p><b>Challenge Description: </b></p>
 											<p>{{ mission.description }}</p>
 											{% if mission.file %}
-												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+												<p><b>File:</b> <a href="uploads/{{ mission.file }}">download</a></p>
 											{% endif %}
 											<p><b>Points: </b>{{ mission.points }}</p>
 											<p><b>Author: </b>{{ mission.author }}</p>
@@ -170,7 +170,7 @@
 											<p><b>Challenge Description: </b></p>
 											<p>{{ mission.description }}</p>
 											{% if mission.file %}
-												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+												<p><b>File:</b> <a href="uploads/{{ mission.file }}">download</a></p>
 											{% endif %}
 											<p><b>Points: </b>{{ mission.points }}</p>
 											<p><b>Author: </b>{{ mission.author }}</p>
@@ -232,7 +232,7 @@
 											<p><b>Challenge Description: </b></p>
 											<p>{{ mission.description }}</p>
 											{% if mission.file %}
-												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+												<p><b>File:</b> <a href="uploads/{{ mission.file }}">download</a></p>
 											{% endif %}
 											<p><b>Points: </b>{{ mission.points }}</p>
 											<p><b>Author: </b>{{ mission.author }}</p>
@@ -294,7 +294,8 @@
 											<p><b>Challenge Description: </b></p>
 											<p>{{ mission.description }}</p>
 											{% if mission.file %}
-												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+												<p><b>File:</b> <a href="uploads/{{ mission.file }}">download</a></p>
+												<img src="{{ mission.file }}">
 											{% endif %}
 											<p><b>Points: </b>{{ mission.points }}</p>
 											<p><b>Author: </b>{{ mission.author }}</p>
@@ -356,7 +357,7 @@
 											<p><b>Challenge Description: </b></p>
 											<p>{{ mission.description }}</p>
 											{% if mission.file %}
-												<p><b>File:</b> <a href="{{ mission.file }}">download</a></p>
+												<p><b>File:</b> <a href="uploads/{{ mission.file }}">download</a></p>
 											{% endif %}
 											<p><b>Points: </b>{{ mission.points }}</p>
 											<p><b>Author: </b>{{ mission.author }}</p>
