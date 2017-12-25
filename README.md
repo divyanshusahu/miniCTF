@@ -4,7 +4,7 @@
 
 #### Live demo 
 
-###### Available Soon
+[https://xyz-minictf.herokuapp.com/](https://xyz-minictf.herokuapp.com/)
 
 #### FEATURES :
 
