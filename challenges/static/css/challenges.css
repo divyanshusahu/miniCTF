@@ -1,6 +1,23 @@
 #challenges {
-	margin-top: 5%;
+	margin-top: 2%;
 	color:#000;
+}
+
+#pageHeading {
+	width: 100%;
+	height: 80px;
+	background-color: #444;
+	color: #eee;
+	text-align: center;
+	line-height: 80px;
+	vertical-align: middle;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.heading p {
+	font-size: 20px;
+	font-family: 'ABeeZee'
 }
 
 .challengesSet {
@@ -13,27 +30,29 @@
 }
 
 #crypto, #for, #pwn, #re, #stego, #web {
-	border: 4px double #aaa;
+	/*border-bottom: 4px double #aaa;
+	border-left: 4px double #aaa;*/
 	padding: 10px;
-	margin-bottom: 50px;
-	background-color: #eee;
-	box-shadow: 5px 10px 8px 5px #aaa;
+	margin-bottom: 10px;
+	/*background-color: #eee;
+	box-shadow: 5px 10px 8px 5px #aaa;*/
 }
 
 .mission {
 	height: 100px;
-	width: 300px;
+	width: 200px;
 	display: inline-block;
-	background-color: #f44336;
+	background-color: #696969;
 	transition: 0.5s;
 	text-align: center;
-	font-size: 20px;
-	border-radius: 10px;
+	font-size: 16px;
 	cursor: pointer;
 	color: #fff;
-	padding-top: 10px;
+	padding-top: 15px;
 	margin-right: 25px;
 	margin-bottom: 10px;
+	opacity: 0.9;
+	box-shadow: 0 4px 8px 0 #aaa;
 }
 
 .solved {
@@ -41,8 +60,7 @@
 }
 
 .mission:hover {
-	background-color: #008cba;
-	color: #fff;
+	opacity: 1; 
 }
 
 .modal a {
@@ -55,6 +73,7 @@
 
 .modal {
 	margin-top: 10%;
+	font-family: 'ABeeZee';
 }
 
 .input_flag {
@@ -67,21 +86,23 @@
 
 .input_flag_button {
 	height: 40px;
-	background-color: #008cba;
 	border: 0;
 	width: 100px;
-	color: #fff;
+	color: #222;
+	background-color: #fff;
+	border: 2px solid #444;
+	display: inline-block;
 	font-size: 16px;
 	text-decoration: none;
-	display: inline-block;
 	transition: 0.5s;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	/*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
 	margin-left: 5px;
+	float: right;
 }
 
 .input_flag_button:hover {
-	background-color: #fff;
-	color: #000;
+	background-color: #444;
+	color: #fff;
 	border: 1px solid #008cba;
 }
 

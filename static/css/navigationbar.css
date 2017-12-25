@@ -1,5 +1,6 @@
 body {
-	background-color: #efe;
+	background: linear-gradient(#fffaf0);
+	font-family: 'Ubuntu';
 }
 
 a {
