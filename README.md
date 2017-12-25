@@ -6,60 +6,24 @@
 
 ###### Available Soon
 
-#### FEATURES :
-
-* Cool Interface
-* Score Board
-* Responsive Design
-* Password Change Support 
-* and a lot more.
-
-#### SCREENSHOTS :
-
-Challenge Page
-
-<img src="readmeimg/challenges.png" width="100%">
-
-Challenge View
-
-<img src="readmeimg/onechallenge.png" width="100%">
-
-Score Board
-
-<img src="readmeimg/scoreboard.png" width="100%">
-
-Team Details
-
-<img src="readmeimg/details.png" width="100%">
-
-All Teams list
-
-<img src="readmeimg/teams.png" width="100%">
-
 #### Test it locally
 
-###### Requirments
+Here in this branch I added my own database which I used in the development process. Therefore admin and other users are already there with some challenges to test. Below are the few credentials to use. 
 
 ```
-python 3.5.x
-django 2.0
-```
-
-###### Install django
-
-```sh
-$ sudo pip3 install django
+admin:minictf@123
+thrones:12345678
+testing:12345678
 ```
 
 ###### Install miniCTF
 
 ```sh
 $ git clone https://github.com/DivyanshuSahu/miniCTF.git
+$ git checkout local # switch to local branch
 $ django-admin startproject minictf
-copy all files and folders from git clone folder(miniCTF) to django project folder(minictf), then
-$ python manage.py makemigrations accounts challenges
-$ python manage.py migrate
+copy all files and folders from git clone folder(miniCTF) to django project folder(minictf)
 $ python manage.py runserver
 ```
 
-Then register or create superuser and add challenges.
+Then use above credentials to log in.
