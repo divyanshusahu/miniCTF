@@ -34,8 +34,8 @@
 			<form method="post">
 				{% csrf_token %}
 				{% for fields in form %}
-					<div class="form-group">
-						<b>{{ fields.label }}</b>
+					<div>
+						<label>{{ fields.label }}</label>
 						{{ fields }}
 					</div>
 				{% endfor %}

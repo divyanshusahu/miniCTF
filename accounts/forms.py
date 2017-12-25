@@ -3,23 +3,21 @@ from django.contrib.auth.forms import AuthenticationForm
 from . import models
 
 class RegisterForm(forms.ModelForm) :
-	teamname = forms.CharField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Team Name','class':'form-control'}))
-	email = forms.EmailField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Team Email','class':'form-control', 'type':'email'}))
-	password = forms.CharField(max_length=250, min_length=8, label="", widget=forms.TextInput(attrs={'placeholder':'Password','class':'form-control','type':'password'}))
+	teamname = forms.CharField(max_length=250, label="Team Name")
+	email = forms.EmailField(max_length=250, label="Team Email", widget=forms.TextInput(attrs={'type':'email'}))
+	password = forms.CharField(max_length=250, min_length=8, label="Password", widget=forms.TextInput(attrs={'type':'password'}))
 
 	class Meta :
 		model = models.Teams
 		fields = ["teamname","email"]
 
 class LoginForm(AuthenticationForm) :
-	username = forms.CharField(max_length=50, label="", widget=forms.TextInput(attrs={'placeholder':'Team Name','class':'form-control'}))
-	password = forms.CharField(max_length=250, min_length=8, label="", widget=forms.TextInput(attrs={'placeholder':'Password','class':'form-control','type':'password'}))
+	username = forms.CharField(max_length=50, label="Team Name")
+	password = forms.CharField(max_length=250, min_length=8, label="Password", widget=forms.TextInput(attrs={'type':'password'}))
 
 class UpdateTeamDetails(forms.ModelForm) :
-	#teamname = forms.CharField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Team Name','class':'form-control'}))
-	#email = forms.EmailField(max_length=250, label="", widget=forms.TextInput(attrs={'placeholder':'Team Email','class':'form-control', 'type':'email'}))
-	job = forms.CharField(max_length=250, label="Job", widget=forms.TextInput(attrs={'placeholder':'Job','class':'form-control'}), required=False)
-	company = forms.CharField(max_length=250, label="Company", widget=forms.TextInput(attrs={'placeholder':'Company','class':'form-control'}), required=False)
+	job = forms.CharField(max_length=250, label="Job", required=False)
+	company = forms.CharField(max_length=250, label="Company", required=False)
 
 	class Meta :
 		model = models.Teams
