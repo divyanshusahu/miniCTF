@@ -32,9 +32,6 @@ Team Details
 
 <img src="readmeimg/details.png" width="100%">
 
-All Teams list
-
-<img src="readmeimg/teams.png" width="100%">
 
 #### Test it locally
 
@@ -50,6 +47,8 @@ django 2.0
 ```sh
 $ sudo pip3 install django
 ```
+
+<b>Want to make this process fast. Switch to [local branch](https://github.com/DivyanshuSahu/miniCTF/tree/local)</b>
 
 ###### Install miniCTF
 
