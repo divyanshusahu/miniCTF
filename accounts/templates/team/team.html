@@ -11,64 +11,50 @@
 {% endblock %}
 
 {% block custombody %}
+
+	<div id="pageHeading">
+		<p>{{ team_details.teamname }}</p>	
+	</div>
+	
 	<div class="container">
+		
 		<div id="team_details">
-			<h3>Team Details</h3>
-			<div class="table-responsive">
-				<table class="table table-bordered">
-					<tbody>
-						<tr>
-							<td>Team Name</td>
-							<td>{{ team_details.teamname }}</td>
-						</tr>
-						<tr>
-							<td>Team Email</td>
-							<td>{{ team_details.email }}</td>
-						</tr>
-						<tr>
-							<td>Team Job</td>
-							<td>{{ team_details.job }}</td>
-						</tr>
-						<tr>
-							<td>Team Company</td>
-							<td>{{ team_details.company }}</td>
-						</tr>
-						<tr>
-							<td>Team Points</td>
-							<td>{{ team_details.points }}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			<p style="color: #444;"> <b style="font-size: 24px; color: #222">{{ team_details.points }}</b> points</p>
 		</div>
+		
 		<div id="solved_challenges">
-			<h3>Solved Challenges</h3>
-			<div class="table-responsive">
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<td>
-								<b>Challenge Name</b>
-							</td>
-							<td>
-								<b>Points</b>
-							</td>
-						</tr>
-				</thead>
-				<tbody>
-					{% for solve in solved_challenges %}
-						<tr>
-							<td>
-								{{ solve.challenge_id }}
-							</td>
-							<td>
-								{{ solve.points }}
-							</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-				</table>
-			</div>
+			{% if solved_challenges %}
+				<h3>Solved Challenges</h3>
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<td>
+									<b>Challenge Name</b>
+								</td>
+								<td>
+									<b>Points</b>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							{% for solve in solved_challenges %}
+								<tr>
+									<td>
+										{{ solve.challenge_id }}
+									</td>
+									<td>
+										{{ solve.points }}
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			{% else %}
+				<p>No solves yet</p>
+			{% endif %}
 		</div>
+	
 	</div>
 {% endblock %}

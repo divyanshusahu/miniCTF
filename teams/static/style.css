@@ -1,5 +1,5 @@
 #teamList {
-	margin: 10% 0;
+	margin: 2% 0;
 	text-align: center;
 }
 
@@ -8,7 +8,24 @@ table {
 	text-align: left;
 }
 
+table tbody tr td:first-child {
+	color: #008cba;
+}
+
 table th {
-	background-color: #e33;
-	color: #fff;
+	color: #222;
+}
+
+#pageHeading {
+	width: 100%;
+	height: 100px;
+	background-color: #444;
+	color: #eee;
+	text-align: center;
+	line-height: 80px;
+	vertical-align: middle;
+	font-size: 32px;
+	font-weight: bold;
+	font-family: 'Raleway';
+	letter-spacing: 2px;
 }

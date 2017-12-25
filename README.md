@@ -30,7 +30,7 @@ Score Board
 
 Team Details
 
-<img src="readmeimg/details.png" width="100%">
+<img src="readmeimg/teams.png" width="100%">
 
 
 #### Test it locally
