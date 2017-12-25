@@ -12,6 +12,10 @@
 
 {% block custombody %}
 	
+	<div id="pageHeading">
+		<p>Profile</p>
+	</div>
+
 	<div class="container">
 		<div id="updateForm">
 			{% if request.method == 'POST' %}
@@ -25,7 +29,6 @@
 					</div>
 				{% endif %}
 			{% endif %}
-			<h2>Team Details</h2>
 			<p><b>Team Name</b> : {{ user.username }}</p>
 			<p><b>Team Email</b> : {{ user.email }}</p>
 			<form method="post">
