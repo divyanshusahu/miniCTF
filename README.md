@@ -11,7 +11,6 @@
 Here in this branch I added my own database which I used in the development process. Therefore admin and other users are already there with some challenges to test. Below are the few credentials to use. 
 
 ```
-admin:minictf@123
 thrones:12345678
 testing:12345678
 ```
