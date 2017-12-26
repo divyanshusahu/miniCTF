@@ -93,7 +93,7 @@ def flagsubmit(request) :
 		flag_submit_id = x[:-5]
 	flag = models.Challenges.objects.get(challenge_id=flag_submit_id).flag
 	points = models.Challenges.objects.get(challenge_id=flag_submit_id).points
-	if flag == flag_submit :
+	if flag == flag_submit and not request.user.is_superuser :
 		fr = models.ChallengesSolvedBy(challenge_id=flag_submit_id, user_name=request.user, points=points)
 		try :
 			fc = models.ChallengesSolvedBy.objects.filter(user_name=request.user)
@@ -114,6 +114,8 @@ def flagsubmit(request) :
 			updated_points = initial_points + points
 			accounts_models.Teams.objects.filter(teamname=request.user).update(points=updated_points)
 			response = '<div id="flag_correct"><p>CORRECT</p></div>'
+	elif request.user.is_superuser :
+		response = '<div id="flag_already"><p>Correct, But not added to scoreboard</p></div>'
 	else :
 		response = '<div id="flag_incorrect"><p>INCORRECT</p></div>'
 	return HttpResponse(response)
