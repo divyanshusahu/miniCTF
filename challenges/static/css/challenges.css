@@ -127,3 +127,14 @@
 #flag_already {
 	background-color: #008cba;
 }
+
+@media screen and (max-width: 600px) {
+	.input_flag {
+		width: 70%;
+	}
+
+	.input_flag_button {
+		width: 60px;
+		font-size: 12px;
+	}
+}
