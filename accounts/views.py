@@ -86,6 +86,7 @@ def update_password(request) :
 	
 	return render(request, 'profile/change-password.html',{'form':form})
 
+@login_required(login_url="/accounts/login/")
 def every_team(request, pk) :
 	requested_team = pk
 	try :
