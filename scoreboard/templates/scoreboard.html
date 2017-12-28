@@ -30,7 +30,7 @@
 						{% for t in teams_list %}
 						<tr>
 							<td>
-								{{ t.teamname }}
+								<a href="/accounts/team/{{ t.teamname }}" style="color: #008cba;">{{ t.teamname }}</a>
 							</td>
 							<td>
 								{{ t.points }}
