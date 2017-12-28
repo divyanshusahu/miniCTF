@@ -30,7 +30,7 @@
 					<tbody>
 						{% for team in teams_list %}
 							<tr>
-								<td> {{ team.teamname }} </td>
+								<td> <a href="/accounts/team/{{ team.teamname }}">{{ team.teamname }}</a> </td>
 								<td> {{ team.job }} </td>
 								<td> {{ team.company }} </td>
 							</tr>

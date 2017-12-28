@@ -85,3 +85,12 @@ def update_password(request) :
 		form = PasswordChangeForm(request.user)
 	
 	return render(request, 'profile/change-password.html',{'form':form})
+
+def every_team(request, pk) :
+	requested_team = pk
+	try :
+		requested_team_details = models.Teams.objects.get(teamname=requested_team)
+		solved_team_challenges = ChallengesSolvedBy.objects.filter(user_name=requested_team)
+		return render(request, 'team/team.html', {'team_details':requested_team_details,'solved_challenges':solved_team_challenges})
+	except :
+		return HttpResponseRedirect("/accounts/team/")
