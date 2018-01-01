@@ -69,17 +69,3 @@ label {
 	color: #fff;
 	background-color: #444;
 }
-
-#pageHeading {
-	width: 100%;
-	height: 100px;
-	background-color: #444;
-	color: #eee;
-	text-align: center;
-	line-height: 80px;
-	vertical-align: middle;
-	font-size: 32px;
-	font-weight: bold;
-	font-family: 'Raleway';
-	letter-spacing: 2px;
-}

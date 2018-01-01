@@ -71,6 +71,20 @@ a:visited {
 	display: none;
 }
 
+#pageHeading {
+	width: 100%;
+	height: 100px;
+	background-color: #444;
+	color: #eee;
+	text-align: center;
+	line-height: 80px;
+	vertical-align: middle;
+	font-size: 32px;
+	font-weight: bold;
+	font-family: 'Raleway';
+	letter-spacing: 2px;
+}
+
 @media screen and (max-width: 1200px) {
 
 	.navigationBarLeft ul li:not(:first-child), .navigationBarRight ul li:not(:first-child) {
