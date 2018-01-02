@@ -17,18 +17,48 @@
 	</div>
 
 	<div class="container">
+		
 		<div id="addForm">
-			<button data-toggle="collapse" data-target="#newThreadForm">Add New</button>
+			<button data-toggle="collapse" data-target="#newThreadForm" id="addNewButton">Add New</button>
 			<div id="newThreadForm" class="collapse">
 				<form method="post" enctype="multipart/form-data" autocomplete="off">
 					{% for field in form %}
+						{% csrf_token %}
 						<label>{{ field.label }}</label>
 						{{ field }}
 					{% endfor %}
 					<button type="submit">Submit</button>
 				</form>
+				{% if request.method == 'POST' %}
+					{% if success %}
+						<div class="alerted successful">
+							<p>Thread added successfully</p>
+						</div>
+					{% else %}
+						<div class="alerted failure">
+							<p>Some Error Occurred</p>
+						</div>
+					{% endif %}
+				{% endif %}
 			</div>
 		</div>
+
+		<div id="allThreads">
+			{% for thread in all_threads %}
+				<div id="thread_{{ thread.id }}" class="threads">
+					<p><a href="{{ thread.id }}">{{ thread.topic }}</a></p>
+				</div>
+			{% endfor %}
+		</div>
+	
 	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#addNewButton").click(function(){
+				$(".alerted").remove();
+			});
+		});
+	</script>
 
 {% endblock %}
