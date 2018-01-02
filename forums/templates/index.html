@@ -29,36 +29,30 @@
 					{% endfor %}
 					<button type="submit">Submit</button>
 				</form>
-				{% if request.method == 'POST' %}
-					{% if success %}
-						<div class="alerted successful">
-							<p>Thread added successfully</p>
-						</div>
-					{% else %}
-						<div class="alerted failure">
-							<p>Some Error Occurred</p>
-						</div>
-					{% endif %}
-				{% endif %}
 			</div>
 		</div>
 
 		<div id="allThreads">
 			{% for thread in all_threads %}
 				<div id="thread_{{ thread.id }}" class="threads">
-					<p><a href="{{ thread.id }}">{{ thread.topic }}</a></p>
+					<div class="topThread">
+						<p>
+							<a href="{{ thread.id }}">{{ thread.topic }}</a> <span style="float: right;">Score: {{ thread.score }}</span>
+						</p>
+					</div>
+					<div class="descriptionThread">
+						<p>{{ thread.description}}</p>
+					</div>
+					<div class="bottomThread">
+						<p>
+							Posted By: <a href="/accounts/team/{{ thread.posted_by_id }}">{{ thread.posted_by_id }}</a>
+							<span style="float: right;">Posted On: {{ thread.posted_on }}</span>
+						</p>
+					</div>
 				</div>
 			{% endfor %}
 		</div>
 	
 	</div>
-
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#addNewButton").click(function(){
-				$(".alerted").remove();
-			});
-		});
-	</script>
 
 {% endblock %}

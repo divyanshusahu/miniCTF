@@ -1,0 +1,18 @@
+{% extends 'navigationbar.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+	<title>Forums</title>
+{% endblock %}
+
+{% block customcss %}
+{% endblock %}
+
+{% block custombody %}
+	
+	<div id="pageHeading">
+		<p>Forums: {{ thread.topic }}</p>
+	</div>
+
+{% endblock %}

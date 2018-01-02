@@ -8,11 +8,9 @@ import datetime
 
 @login_required(login_url="/accounts/login/")
 def index(request) :
-	success = 0
 	if request.method == 'POST' :
 		form = forms.AddThreadForm(request.POST, request.FILES)
 		if form.is_valid() :
-			success = 1
 			if request.FILES :
 				i = models.Threads(topic=request.POST['topic'],
 					posted_on=datetime.datetime.now(),
@@ -31,8 +29,9 @@ def index(request) :
 
 	all_threads = models.Threads.objects.order_by("-posted_on")
 	print(all_threads)
-	return render(request, 'index.html', {'form':form,'success':success,'all_threads':all_threads})
+	return render(request, 'index.html', {'form':form, 'all_threads':all_threads})
 
 @login_required(login_url="/accounts/login/")
 def thread(request, pk) :
-	return render(request, 'index.html')
+	thread = models.Threads.objects.get(id=pk)
+	return render(request, 'thread.html',{'thread':thread})
