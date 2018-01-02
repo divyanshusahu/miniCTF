@@ -1,0 +1,42 @@
+#addForm {
+	margin-top: 2%;
+}
+
+#addForm button {
+	height: 40px;
+	width: 100px;
+	font-size: 16px;
+	border:2px solid #444;
+	background-color: #fff;
+	transition: 0.5s;
+}
+
+#addForm button:hover {
+	background-color: #444;
+	color: #fff;
+}
+
+#newThreadForm {
+	margin-top: 2%;
+	width: 100%;
+	box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);
+	padding: 20px;
+}
+
+input[type=text] {
+	width: 100%;
+	margin-bottom: 2%;
+	background-color: #dcdcdc;
+	border: 0;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+input[type=file] {
+	margin-bottom: 2%;
+}
+
+input[type=text]:focus {
+	background-color: #fff;
+	border: 2px solid #a3dc9c;
+}

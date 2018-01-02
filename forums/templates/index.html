@@ -1,13 +1,34 @@
 {% extends 'navigationbar.html' %}
 
+{% load staticfiles %}
+
 {% block title %}
-	<title>Forum</title>
+	<title>Forums</title>
+{% endblock %}
+
+{% block customcss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
 {% endblock %}
 
 {% block custombody %}
 	
 	<div id="pageHeading">
-		<p>Forum</p>
+		<p>Forums</p>
+	</div>
+
+	<div class="container">
+		<div id="addForm">
+			<button data-toggle="collapse" data-target="#newThreadForm">Add New</button>
+			<div id="newThreadForm" class="collapse">
+				<form method="post" enctype="multipart/form-data" autocomplete="off">
+					{% for field in form %}
+						<label>{{ field.label }}</label>
+						{{ field }}
+					{% endfor %}
+					<button type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
 	</div>
 
 {% endblock %}
