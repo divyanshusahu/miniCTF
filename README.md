@@ -20,8 +20,6 @@ test:qwertyuiop
 ```sh
 $ git clone https://github.com/DivyanshuSahu/miniCTF.git
 $ git checkout local
-$ django-admin startproject minictf
-copy all files and folders from git clone folder(miniCTF) to django project folder(minictf), then
 $ python manage.py runserver
 ```
 
