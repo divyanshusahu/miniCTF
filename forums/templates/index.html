@@ -22,8 +22,8 @@
 			<button data-toggle="collapse" data-target="#newThreadForm" id="addNewButton">Add New</button>
 			<div id="newThreadForm" class="collapse">
 				<form method="post" enctype="multipart/form-data" autocomplete="off">
+					{% csrf_token %}
 					{% for field in form %}
-						{% csrf_token %}
 						<label>{{ field.label }}</label>
 						{{ field }}
 					{% endfor %}

@@ -28,10 +28,32 @@ def index(request) :
 		form = forms.AddThreadForm()
 
 	all_threads = models.Threads.objects.order_by("-posted_on")
-	print(all_threads)
 	return render(request, 'index.html', {'form':form, 'all_threads':all_threads})
 
 @login_required(login_url="/accounts/login/")
 def thread(request, pk) :
 	thread = models.Threads.objects.get(id=pk)
-	return render(request, 'thread.html',{'thread':thread})
+
+	if request.method == 'POST' :
+		form = forms.AddAnswerForm(request.POST, request.FILES)
+		if form.is_valid() :
+			if request.FILES :
+				i = models.Answers(answer_on=thread,
+					answer_by=Teams.objects.get(teamname=request.user),
+					answer=request.POST['answer'],
+					answer_files=request.FILES['answer_files'],
+					answer_date=datetime.datetime.now())
+				i.save()
+			else :
+				i = models.Answers(answer_on=thread,
+					answer_by=Teams.objects.get(teamname=request.user),
+					answer=request.POST['answer'],
+					answer_date=datetime.datetime.now()
+					)
+				i.save()
+	else :
+		form = forms.AddAnswerForm()
+
+	answers = models.Answers.objects.filter(answer_on_id=pk)
+
+	return render(request, 'thread.html',{'form':form, 'answers':answers, 'thread': thread})

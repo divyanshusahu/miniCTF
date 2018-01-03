@@ -7,12 +7,52 @@
 {% endblock %}
 
 {% block customcss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
 {% endblock %}
 
 {% block custombody %}
 	
 	<div id="pageHeading">
 		<p>Forums: {{ thread.topic }}</p>
+	</div>
+
+	<div class="container">
+		
+		<div id="addForm">
+			<button data-toggle="collapse" data-target="#newThreadForm" id="addNewButton">Add New</button>
+			<div id="newThreadForm" class="collapse">
+				<form method="post" enctype="multipart/form-data" autocomplete="off">
+					{% csrf_token %}
+					{% for field in form %}
+						<label>{{ field.label }}</label>
+						{{ field }}
+					{% endfor %}
+					<button type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+
+		<div id="allThreads">
+			{% for answer in answers %}
+				<div id="answer_{{ answer.id }}" class="threads">
+					<div class="topThread">
+						<p>
+							<span style="float: right;">Score: {{ answer.score }}</span>
+						</p>
+					</div>
+					<div class="descriptionThread">
+						<p>{{ answer.answer}}</p>
+					</div>
+					<div class="bottomThread">
+						<p>
+							By: <a href="/accounts/team/{{ answer.answer_by_id }}">{{ answer.answer_by_id }}</a>
+							<span style="float: right;">On: {{ answer.answer_date }}</span>
+						</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
 	</div>
 
 {% endblock %}
