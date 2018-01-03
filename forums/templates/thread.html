@@ -32,6 +32,27 @@
 			</div>
 		</div>
 
+		<h2>Question</h2>
+		<div id="allThreads">
+				<div id="thread_{{ thread.id }}" class="threads">
+					<div class="topThread">
+						<p>
+							<a href="{{ thread.id }}">{{ thread.topic }}</a> <span style="float: right;">Score: {{ thread.score }}</span>
+						</p>
+					</div>
+					<div class="descriptionThread">
+						<p>{{ thread.description}}</p>
+					</div>
+					<div class="bottomThread">
+						<p>
+							Posted By: <a href="/accounts/team/{{ thread.posted_by_id }}">{{ thread.posted_by_id }}</a>
+							<span style="float: right;">Posted On: {{ thread.posted_on }}</span>
+						</p>
+					</div>
+				</div>
+		</div>
+
+		<h2>Answers</h2>
 		<div id="allThreads">
 			{% for answer in answers %}
 				<div id="answer_{{ answer.id }}" class="threads">
