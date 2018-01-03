@@ -59,9 +59,7 @@ $ sudo pip3 install django
 
 ```sh
 $ git clone https://github.com/DivyanshuSahu/miniCTF.git
-$ django-admin startproject minictf
-copy all files and folders from git clone folder(miniCTF) to django project folder(minictf), then
-$ python manage.py makemigrations accounts challenges
+$ python manage.py makemigrations accounts challenges forums
 $ python manage.py migrate
 $ python manage.py runserver
 ```
