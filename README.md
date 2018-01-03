@@ -12,6 +12,7 @@
 * Score Board
 * Responsive Design
 * Password Change Support 
+* Discussion Forums
 * and a lot more.
 
 #### SCREENSHOTS :
@@ -31,6 +32,10 @@ Score Board
 Team Details
 
 <img src="readmeimg/teams.png" width="100%">
+
+Discussion Forums
+
+<img src="readmeimg/forum.png" width="100%">
 
 
 #### Test it locally
