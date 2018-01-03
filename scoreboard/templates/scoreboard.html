@@ -12,11 +12,14 @@
 
 {% block custombody %}
 	
+	<div id="pageHeading">
+		<p>Scoreboard</p>
+	</div>
+	
 	<div class="container">
 		<div id="score">
-			<h3>Scoreboard</h3>
 			<div class="table-responsive">
-				<table class="table table-striped table-bordered">
+				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>Team Name</th>
@@ -27,7 +30,7 @@
 						{% for t in teams_list %}
 						<tr>
 							<td>
-								{{ t.teamname }}
+								<a href="/accounts/team/{{ t.teamname }}" style="color: #008cba;">{{ t.teamname }}</a>
 							</td>
 							<td>
 								{{ t.points }}

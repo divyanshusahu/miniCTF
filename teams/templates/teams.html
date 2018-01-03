@@ -12,11 +12,14 @@
 
 {% block custombody %}
 
+	<div id="pageHeading">
+		<p>Teams</p>
+	</div>
+	
 	<div class="container">
 		<div id="teamList">
-			<h3>All Teams List</h3>
 			<div class="table-responsive">
-				<table class="table table-striped table-bordered">
+				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>Team name</th>
@@ -27,7 +30,7 @@
 					<tbody>
 						{% for team in teams_list %}
 							<tr>
-								<td> {{ team.teamname }} </td>
+								<td> <a href="/accounts/team/{{ team.teamname }}">{{ team.teamname }}</a> </td>
 								<td> {{ team.job }} </td>
 								<td> {{ team.company }} </td>
 							</tr>

@@ -13,13 +13,18 @@
 {% block custombody %}
 
 	<!-- challenges display -->
+
+	<div id="pageHeading">
+		<p>Challenges</p>
+	</div>
+
 	<div id="challenges">
 		<div class="container">
 			<div class="challengesSet">
 				
 				<div id="crypto">
 					<div class="heading">
-						<h1>Cryptography</h1>
+						<p>Cryptography</p>
 					</div>
 					{% if data_crypto %}
 						{% for mission in data_crypto %}
@@ -82,13 +87,13 @@
 						{% endfor %}
 
 					{% else %}
-						<p style="color: red"><b>No challenges available yet</b></p>
+						<p style="color: red">No challenges available yet</p>
 					{% endif %}
 				</div>
 
 				<div id="for">
 					<div class="heading">
-						<h1>Forensics</h1>
+						<p>Forensics</p>
 					</div>
 					{% if data_for %}
 						{% for mission in data_for %}
@@ -151,13 +156,13 @@
 						{% endfor %}
 
 					{% else %}
-						<p style="color: red"><b>No challenges available yet</b></p>
+						<p style="color: red">No challenges available yet</p>
 					{% endif %}
 				</div>
 
 				<div id="pwn">
 					<div class="heading">
-						<h1>Pwning</h1>
+						<p>Pwning</p>
 					</div>
 					{% if data_pwn %}
 						{% for mission in data_pwn %}
@@ -220,13 +225,13 @@
 						{% endfor %}
 
 					{% else %}
-						<p style="color: red"><b>No challenges available yet</b></p>
+						<p style="color: red">No challenges available yet</p>
 					{% endif %}
 				</div>
 
 				<div id="re">
 					<div class="heading">
-						<h1>Reverse Engineering</h1>
+						<p>Reverse Engineering</p>
 					</div>
 					{% if data_re %}
 						{% for mission in data_re %}
@@ -289,13 +294,13 @@
 						{% endfor %}
 
 					{% else %}
-						<p style="color: red"><b>No challenges available yet</b></p>
+						<p style="color: red">No challenges available yet</p>
 					{% endif %}
 				</div>
 
 				<div id="stego">
 					<div class="heading">
-						<h1>Stegnography</h1>
+						<p>Stegnography</p>
 					</div>
 					{% if data_stego %}
 						{% for mission in data_stego %}
@@ -358,13 +363,13 @@
 						{% endfor %}
 
 					{% else %}
-						<p style="color: red"><b>No challenges available yet</b></p>
+						<p style="color: red">No challenges available yet</p>
 					{% endif %}				
 				</div>
 
 				<div id="web">
 					<div class="heading">
-						<h1>Web</h1>
+						<p>Web</p>
 					</div>
 					{% if data_web %}
 						{% for mission in data_web %}
@@ -427,7 +432,7 @@
 						{% endfor %}
 
 					{% else %}
-						<p style="color: red"><b>No challenges available yet</b></p>
+						<p style="color: red">No challenges available yet</p>
 					{% endif %}
 				</div>
 

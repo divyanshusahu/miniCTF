@@ -11,14 +11,18 @@
 {% endblock %}
 
 {% block custombody %}
-	<!-- Register here -->
+
+	<div id="pageHeading">
+		<p>Login</p>
+	</div>
+
 	<div id="register">
 		<div class="registerTop">
 			<table>
 				<tbody>
 					<tr>
-						<td style="color:#fff; background-color: #44e"><a href=""><span>LOGIN</span></a></td>
-						<td><a href="../register"><span>REGISTER</span></a></td>
+						<td style="border-bottom: 0;"><a href=""><span>LOGIN</span></a></td>
+						<td style="border:0; border-bottom: 1px solid #888; color: #a3dc9c"><a href="../register"><span>REGISTER</span></a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -28,13 +32,16 @@
 				{% csrf_token %}
 	
 				{% for field in form %}
-					<div class="form-group">
+					<div>
+						<label>{{ field.label }}</label>
 						{{ field }}
+						{{ field.errors }}
 					</div>
 				{% endfor %}
 	
-				<input type="submit" name="submit" value="Login" class="submitButton">
+				<button type="submit" name="submit" class="submitButton">Login</button>
 			</form>
 		</div>
 	</div>
+
 {% endblock %}

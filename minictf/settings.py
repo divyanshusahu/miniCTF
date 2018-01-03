@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'challenges.apps.ChallengesConfig',
     'teams.apps.TeamsConfig',
     'scoreboard.apps.ScoreboardConfig',
+    'forums.apps.ForumsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,14 +1,9 @@
 #score {
-	margin-top: 10%;
+	margin-top: 2%;
 	text-align: center;
 }
 
 table {
 	margin-top: 2%;
 	text-align: left;
-}
-
-table th {
-	background-color: #e33;
-	color: #fff;
 }

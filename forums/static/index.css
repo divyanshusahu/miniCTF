@@ -1,0 +1,93 @@
+#addForm {
+	margin-top: 2%;
+	margin-bottom: 4%;
+}
+
+#addForm button {
+	height: 40px;
+	width: 100px;
+	font-size: 16px;
+	border:2px solid #444;
+	background-color: #fff;
+	transition: 0.5s;
+	margin-bottom: 2%;
+}
+
+#addForm button:hover {
+	background-color: #444;
+	color: #fff;
+}
+
+#newThreadForm {
+	margin-top: 2%;
+	width: 100%;
+	box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);
+	padding: 20px;
+}
+
+input[type=text] {
+	width: 100%;
+	margin-bottom: 2%;
+	background-color: #dcdcdc;
+	border: 0;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+input[type=file] {
+	margin-bottom: 2%;
+}
+
+input[type=text]:focus {
+	background-color: #fff;
+	border: 2px solid #a3dc9c;
+}
+
+.alerted {
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	color: #fff;
+}
+
+.successful {
+	background-color: #4caf50;
+}
+
+.failure {
+	background-color: #f44336;
+}
+
+.threads {
+	width: 100%;
+	overflow: auto;
+	height: auto;
+	max-height: 300px;
+	padding: 10px;
+	font-size: 16px;
+	background-color: #fff;
+	box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.2);
+	margin-bottom: 5%;
+}
+
+.topThread {
+	/*border-bottom: 1px solid #bbb;*/
+	width: 100%;
+	height: auto;
+}
+
+.descriptionThread {
+	padding: 10px 0px;
+	border-bottom: 1px solid #bbb;
+}
+
+.bottomThread {
+	padding-top: 10px;
+}
+
+.threads a {
+	color: #008cba;
+}

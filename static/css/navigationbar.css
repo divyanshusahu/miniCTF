@@ -1,5 +1,6 @@
 body {
-	background-color: #efe;
+	background: linear-gradient(#fffaf0);
+	font-family: 'Ubuntu';
 }
 
 a {
@@ -70,12 +71,18 @@ a:visited {
 	display: none;
 }
 
-#footer {
+#pageHeading {
 	width: 100%;
 	height: 100px;
 	background-color: #444;
-	position: absolute;
-	bottom: 0;
+	color: #eee;
+	text-align: center;
+	line-height: 80px;
+	vertical-align: middle;
+	font-size: 32px;
+	font-weight: bold;
+	font-family: 'Raleway';
+	letter-spacing: 2px;
 }
 
 @media screen and (max-width: 1200px) {

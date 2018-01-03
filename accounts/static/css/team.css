@@ -1,8 +1,15 @@
-#team_details h3 {
-	margin-top: 10%;
+#team_details {
+	margin-top: 5%;
 	text-align: center;
+	font-size: 20px;
+	margin-bottom: 5%;
 }
 
 #solved_challenges h3 {
 	text-align: center;
+}
+
+#solved_challenges p {
+	text-align: center;
+	font-size: 20px;
 }

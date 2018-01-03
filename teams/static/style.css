@@ -1,5 +1,5 @@
 #teamList {
-	margin: 10% 0;
+	margin: 2% 0;
 	text-align: center;
 }
 
@@ -8,7 +8,10 @@ table {
 	text-align: left;
 }
 
+table tbody tr td:first-child {
+	color: #008cba;
+}
+
 table th {
-	background-color: #e33;
-	color: #fff;
+	color: #222;
 }
