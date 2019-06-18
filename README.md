@@ -1,3 +1,7 @@
+[![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_for-the-badge.svg)](https://inventory.rawsec.ml/)
+[![GitHub stars](https://img.shields.io/github/stars/safflower/solve-me.svg)](https://github.com/safflower/solve-me/stargazers)
+[![GitHub license](https://img.shields.io/github/license/safflower/solve-me.svg)](https://github.com/safflower/solve-me/blob/master/LICENSE)
+
 # MINICTF
 
 ### A platform build in django for hosting CTF events. 
