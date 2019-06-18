@@ -1,5 +1,4 @@
 [![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg)](https://inventory.rawsec.ml/ctf_platforms.html#miniCTF)
-[![GitHub stars](https://img.shields.io/github/stars/safflower/solve-me.svg)](https://github.com/divyanshusahu/miniCTF/stargazers)
 
 # MINICTF
 
