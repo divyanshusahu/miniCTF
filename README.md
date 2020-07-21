@@ -45,25 +45,27 @@ Discussion Forums
 ###### Requirments
 
 ```
-python 3.5.x
+python 3.x
 django 2.0
 ```
 
-###### Install django
+Install [Pipenv](https://pypi.org/project/pipenv/)
 
-```sh
-$ sudo pip3 install django
-```
+> Rename .env.example to .env and change the value of KEY. 
+>
+> **Note**: Keep this value a secret.
 
 <b>Want to make this process fast. Switch to [local branch](https://github.com/DivyanshuSahu/miniCTF/tree/local)</b>
 
 ###### Install miniCTF
 
-```sh
-$ git clone https://github.com/DivyanshuSahu/miniCTF.git
-$ python manage.py makemigrations accounts challenges forums
-$ python manage.py migrate
-$ python manage.py runserver
+```bash
+  git clone https://github.com/DivyanshuSahu/miniCTF.git
+  pipenv shell
+  pipenv install
+  python manage.py makemigrations accounts challenges forums
+  python manage.py migrate
+  python manage.py runserver
 ```
 
 Then register or create superuser and add challenges.
