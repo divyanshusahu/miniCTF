@@ -13,3 +13,5 @@ teams/__pycache__
 teams/migrations
 forums/__pycache__
 forums/migrations
+.vscode
+.env
