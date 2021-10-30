@@ -1,4 +1,4 @@
-from django.apps import AppConfig
+from minictf.appconfig import AppConfig
 
 
 class ChallengesConfig(AppConfig):
