@@ -10,3 +10,4 @@ urlpatterns = [
 	path('admin/add', views.addchallenges, name="add"),
 	path('postflag/', views.flagsubmit, name="flagsubmit")
 ] + static(constants.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
