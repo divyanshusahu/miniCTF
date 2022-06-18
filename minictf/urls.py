@@ -16,8 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from minictf.views import health
-
 urlpatterns = [
     path('', include('home.urls')),
     path('challenges/', include('challenges.urls')),
@@ -26,5 +24,4 @@ urlpatterns = [
     path('scoreboard/', include('scoreboard.urls')),
     path('forums/', include('forums.urls')),
     path('admin/', admin.site.urls),
-    path('health/', health)
 ]
