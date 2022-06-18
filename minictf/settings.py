@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 from dotenv import load_dotenv
-from constants import (LANGUAGE_CODE, TIME_ZONE, USE_I18N, USE_L10N, USE_TZ)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -113,15 +112,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = LANGUAGE_CODE
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = TIME_ZONE
+TIME_ZONE = 'UTC'
 
-USE_I18N = USE_I18N
+USE_I18N = True
 
-USE_L10N = USE_L10N
+USE_L10N = True
 
-USE_TZ = USE_TZ
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -136,3 +135,5 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = '/challenges/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'challenges/uploads/')
+
+MEDIA_URL = '/uploads/'
