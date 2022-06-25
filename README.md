@@ -40,9 +40,24 @@ Discussion Forums
 <img src="readmeimg/forum.png" width="100%">
 
 
-#### Test it locally
+#### Dev env setup
 
-###### Requirments
+##### Requirments
+
+> Rename .env.example to .env and change the value of KEY. 
+>
+> **Note**: Keep this value a secret.
+
+###### Docker Setup
+
+```bash
+  make docker_build
+  make docker_run
+```
+
+This will start the server at port 8000.
+
+###### Local Setup
 
 ```
 python 3.x
@@ -50,10 +65,6 @@ django 2.0
 ```
 
 Install [Pipenv](https://pypi.org/project/pipenv/)
-
-> Rename .env.example to .env and change the value of KEY. 
->
-> **Note**: Keep this value a secret.
 
 <b>Want to make this process fast. Switch to [local branch](https://github.com/DivyanshuSahu/miniCTF/tree/local)</b>
 
