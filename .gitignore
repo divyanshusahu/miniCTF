@@ -16,3 +16,7 @@ forums/migrations
 .vscode
 .env
 .python-version
+
+# infra creds
+infra/credentials
+infra/.terraform/*
