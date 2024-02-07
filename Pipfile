@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "==2.0"
+django = "==3.2.24"
 python-dotenv = "*"
 
 [requires]
